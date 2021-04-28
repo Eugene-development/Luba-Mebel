@@ -5,18 +5,17 @@ services:
     build:
       context: .
       dockerfile: ./docker/node/Dockerfile
-    container_name: orbita_app
+    container_name: luba_app
     restart: always
     ports:
-      - "4000:4000"
+      - "4400:4400"
     command:
       "npm run start"
 
 
-
   nginx:
     image: nginx:1.13
-    container_name: orbita_nginx
+    container_name: luba_nginx
     ports:
       - "80:80"
     volumes:
