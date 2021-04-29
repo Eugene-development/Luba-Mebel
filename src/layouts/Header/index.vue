@@ -101,7 +101,7 @@
         </div>
 
         <div class="max-w-5xl mr-8 mt-8 ml-2">
-          <p class="pb-4 font-extrasolar text-gray-700  md:text-4xl sm:text-5xl border-b-1 flex">
+          <p class="pb-4 font-extrasolar text-gray-700  md:text-3xl sm:text-4xl border-b-1 flex">
             Избранное
           </p>
           <p class=" text-base md:text-left text-gray-700 animate-pulse ">Товаров (0)</p>
@@ -133,7 +133,7 @@
         </div>
 
         <div class="max-w-5xl mr-8 mt-8 ml-2">
-          <p class="pb-4 font-extrasolar text-gray-700  md:text-4xl sm:text-5xl border-b-1 flex">
+          <p class="pb-4 font-extrasolar text-gray-700  md:text-3xl sm:text-4xl border-b-1 flex">
             Моя корзина
           </p>
           <p class=" text-base md:text-left text-gray-700 animate-pulse ">Ваша корзина пуста</p>
