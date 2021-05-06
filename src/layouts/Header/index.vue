@@ -47,7 +47,6 @@
       </div>
     </div>
 
-
     <div class="bg-gray-50 pl-3">
       <div class="py-2 px-8 sm:py-2 sm:px-6 lg:px-8 lg:flex flex justify-between ">
 
