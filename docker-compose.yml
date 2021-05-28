@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/node/Dockerfile
-    container_name: luba_app
+    container_name: "${COMPOSE_PROJECT_NAME}_APP"
     restart: always
     ports:
       - "4400:4400"
@@ -15,9 +15,9 @@ services:
 
   nginx:
     image: nginx:1.13
-    container_name: luba_nginx
+    container_name: "${COMPOSE_PROJECT_NAME}_NGINX"
     ports:
-      - "80:80"
+      - "4405:80"
     volumes:
       - ./:/var/www
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
