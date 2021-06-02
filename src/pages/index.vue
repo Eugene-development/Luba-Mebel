@@ -21,7 +21,7 @@
 
 
       <!-- This example requires Tailwind CSS v2.0+ -->
-      <div class="h-screen flex bg-gray-50 overflow-hidden">
+      <div class=" flex bg-gray-50 overflow-hidden">
 
         <div class="flex-1 min-w-0 flex flex-col overflow-hidden">
 
@@ -30,13 +30,30 @@
 
               <!-- Secondary column (hidden on smaller screens) -->
               <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">
-                <div class="h-full relative flex flex-col w-96 border-r border-gray-200 bg-white">
+                <div class=" relative flex flex-col w-96 border-r border-gray-200 bg-white">
 
 
 
                   <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                     <h3 class="text-center py-3 text-2xl font-extrabold tracking-tight sm:text-4xl">Акции</h3>
                   </div>
+                  <section class="py-2 text-gray-600 body-font">
+                    <div class="container px-5  mx-auto">
+                      <div class="flex flex-wrap -m-4">
+                        <div class=" p-4 w-full">
+                          <a class="block relative h-48 rounded overflow-hidden">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                                 src="https://www.mcstyle.ru/assets/images/catalog/leo_print/11-goryi.jpg">
+                          </a>
+                          <div class="mt-4">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Шкафы-купе</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Лео</h2>
+                            <p class="mt-1">от 17500 р.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
                   <section class="py-2 text-gray-600 body-font">
                     <div class="container px-5  mx-auto">
                       <div class="flex flex-wrap -m-4">
@@ -182,8 +199,7 @@
                         <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Категории</h2>
                         <p class="text-xl text-gray-500">Вся производимая мебель соответствует стандартам качества.</p>
                       </div>
-                      <ul
-                        class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
+                      <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
                         <li>
                           <div class="space-y-4">
                             <div class="aspect-w-3 aspect-h-2">
@@ -194,8 +210,8 @@
 
                             <div class="space-y-2">
                               <div class="text-lg leading-6 font-medium space-y-1">
-                                <h3>Кухни</h3>
-                                <p class="text-blue-600">от 8500 р.</p>
+                                <h3>Кухня</h3>
+                                <p class="text-main">от 8500 р.</p>
                               </div>
                             </div>
                           </div>
@@ -211,8 +227,8 @@
 
                             <div class="space-y-2">
                               <div class="text-lg leading-6 font-medium space-y-1">
-                                <h3>Гостинные</h3>
-                                <p class="text-blue-600">от 8500 р.</p>
+                                <h3>Спальня</h3>
+                                <p class="text-main">от 8500 р.</p>
                               </div>
                             </div>
                           </div>
@@ -228,8 +244,8 @@
 
                             <div class="space-y-2">
                               <div class="text-lg leading-6 font-medium space-y-1">
-                                <h3>Детские</h3>
-                                <p class="text-blue-600">от 8500 р.</p>
+                                <h3>Гостиная</h3>
+                                <p class="text-main">от 8500 р.</p>
                               </div>
                             </div>
                           </div>
@@ -245,8 +261,8 @@
 
                             <div class="space-y-2">
                               <div class="text-lg leading-6 font-medium space-y-1">
-                                <h3>Спальни</h3>
-                                <p class="text-blue-600">от 8500 р.</p>
+                                <h3>Прихожая</h3>
+                                <p class="text-main">от 8500 р.</p>
                               </div>
                             </div>
                           </div>
@@ -262,8 +278,8 @@
 
                             <div class="space-y-2">
                               <div class="text-lg leading-6 font-medium space-y-1">
-                                <h3>Прихожие</h3>
-                                <p class="text-blue-600">от 8500 р.</p>
+                                <h3>Детская</h3>
+                                <p class="text-main">от 8500 р.</p>
                               </div>
                             </div>
                           </div>
@@ -280,7 +296,58 @@
                             <div class="space-y-2">
                               <div class="text-lg leading-6 font-medium space-y-1">
                                 <h3>Шкафы</h3>
-                                <p class="text-blue-600">от 8500 р.</p>
+                                <p class="text-main">от 8500 р.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div class="space-y-4">
+                            <div class="aspect-w-3 aspect-h-2">
+                              <img class="object-cover shadow-lg rounded-lg"
+                                   src="https://www.mcstyle.ru/assets/images/catalog/leo_mix/10-shkaf-kombi-so-stellazhom-1800-interer.jpg"
+                                   alt="">
+                            </div>
+
+                            <div class="space-y-2">
+                              <div class="text-lg leading-6 font-medium space-y-1">
+                                <h3>Диваны</h3>
+                                <p class="text-main">от 8500 р.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div class="space-y-4">
+                            <div class="aspect-w-3 aspect-h-2">
+                              <img class="object-cover shadow-lg rounded-lg"
+                                   src="https://www.mcstyle.ru/assets/images/catalog/leo_mix/10-shkaf-kombi-so-stellazhom-1800-interer.jpg"
+                                   alt="">
+                            </div>
+
+                            <div class="space-y-2">
+                              <div class="text-lg leading-6 font-medium space-y-1">
+                                <h3>Столы и стулья</h3>
+                                <p class="text-main">от 8500 р.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div class="space-y-4">
+                            <div class="aspect-w-3 aspect-h-2">
+                              <img class="object-cover shadow-lg rounded-lg"
+                                   src="https://www.mcstyle.ru/assets/images/catalog/leo_mix/10-shkaf-kombi-so-stellazhom-1800-interer.jpg"
+                                   alt="">
+                            </div>
+
+                            <div class="space-y-2">
+                              <div class="text-lg leading-6 font-medium space-y-1">
+                                <h3>Для дачи</h3>
+                                <p class="text-main">от 8500 р.</p>
                               </div>
                             </div>
                           </div>
