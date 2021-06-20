@@ -9,7 +9,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Любая мебель || Мебельная компания',
+    title: 'Люба Мебель || Магазин корпусной и мягкой мебели',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -32,7 +32,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/vue-lodash'
+    '~/plugins/vue-lodash',
+    '~/plugins/axios'
   ],
   /*
   ** Nuxt.js dev-modules

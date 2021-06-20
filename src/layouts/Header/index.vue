@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="relative ">
-      <div class=" mx-auto py-3 sm:px-6 lg:px-8 bg-gray-200 ">
+      <div class=" mx-auto py-3 sm:px-6 lg:px-8 bg-blueGray-200 ">
         <div class="pr-16 sm:text-left sm:px-8 flex justify-between">
           <p class="text-sm text-main">
             <NuxtLink to="/" class="mr-2">
@@ -139,7 +139,7 @@
     </div>
 
 
-    <div class="relative bg-gray-200 h-16 ">
+    <div class="relative bg-blueGray-200 h-16 ">
       <div class="relative z-10">
         <div class="mb-2 flex  sm:px-6 sm:py-2 lg:px-8 md:justify-start md:space-x-10">
           <div class="md:hidden">
@@ -157,13 +157,14 @@
           </div>
           <div class="hidden md:flex-1 md:flex md:items-center flex justify-between">
             <nav class=" flex space-x-10">
-              <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
-                to="/"
-                @click.native="close_visible"
-              >
-                Кухня
-              </NuxtLink>
+              <div v-for="(head, idx) of allHead" :key="allHead.id" class="space-x-8">
+                <NuxtLink v-for="(rubric, idx) of head.rubric" :key="head.id"
+                          class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                          :to="'/shop/catalog/' + rubric.slug"
+                >
+                  {{ rubric.name }}
+                </NuxtLink>
+              </div>
 
 <!--              <div class="relative">-->
 <!--                &lt;!&ndash; Item active: "text-gray-900", Item inactive: "text-main" &ndash;&gt;-->
@@ -185,97 +186,6 @@
 <!--                  </svg>-->
 <!--                </button>-->
 <!--              </div>-->
-              <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
-                to="/actions"
-                @click.native="close_visible"
-              >
-                Спальня
-              </NuxtLink>
-              <!--              <NuxtLink-->
-              <!--                class="text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"-->
-              <!--                to="/blog"-->
-              <!--                @click.native="close_visible"-->
-              <!--              >-->
-              <!--                Блог-->
-              <!--              </NuxtLink>-->
-              <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
-                to="/about"
-                @click.native="close_visible"
-              >
-                Гостинная
-              </NuxtLink>
-
-              <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
-                to="/about"
-                @click.native="close_visible"
-              >
-                Прихожая
-              </NuxtLink>
-
-<!--              <div class="relative">-->
-<!--                &lt;!&ndash; Item active: "text-gray-900", Item inactive: "text-main" &ndash;&gt;-->
-<!--                <button-->
-<!--                  class="mt-2 group px-1 rounded-md text-main inline-flex items-center text-base font-medium hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"-->
-<!--                  type="button"-->
-<!--                  @click="change_visibleInformation">-->
-<!--                  <span>Прихожая</span>-->
-<!--                  &lt;!&ndash;-->
-<!--                    Heroicon name: chevron-down-->
-
-<!--                    Item active: "text-gray-600", Item inactive: "text-main"-->
-<!--                  &ndash;&gt;-->
-<!--                  <svg aria-hidden="true" class="ml-2 h-5 w-5 text-main group-hover:text-main"-->
-<!--                       fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">-->
-<!--                    <path clip-rule="evenodd"-->
-<!--                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"-->
-<!--                          fill-rule="evenodd"/>-->
-<!--                  </svg>-->
-<!--                </button>-->
-<!--              </div>-->
-              <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
-                to="/contact"
-                @click.native="close_visible"
-              >
-                Детская
-              </NuxtLink>
-              <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
-                to=""
-                target="_blank">
-                Шкафы
-              </NuxtLink>
-
-
-
-              <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
-                to="/"
-                @click.native="close_visible"
-              >
-                Диваны
-              </NuxtLink>
-
-              <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
-                to="/"
-                @click.native="close_visible"
-              >
-                Столы и стулья
-              </NuxtLink>
-
-
-
-
-              <NuxtLink
-                class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
-                to=""
-                target="_blank">
-                Для дачи
-              </NuxtLink>
             </nav>
             <div class="mх-8 mt-1 w-1/5 relative rounded-md shadow-sm">
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -317,8 +227,23 @@
 </template>
 
 <script>
+import {mapActions, mapGetters} from "vuex";
+
 export default {
-  name: "index"
+  name: "index",
+
+  methods: {
+    ...mapActions({
+
+    })
+  },
+
+  computed: {
+    ...mapGetters({
+      allHead: 'navbar/head/allHead',
+    }),
+  },
+
 }
 </script>
 
