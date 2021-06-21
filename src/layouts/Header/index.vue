@@ -160,7 +160,7 @@
               <div v-for="(head, idx) of allHead" :key="allHead.id" class="space-x-8">
                 <NuxtLink v-for="(rubric, idx) of head.rubric" :key="head.id"
                           class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
-                          :to="'/shop/catalog/' + rubric.slug"
+                          :to="'/shop/catalog/' + rubric.id"
                 >
                   {{ rubric.name }}
                 </NuxtLink>
