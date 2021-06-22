@@ -76,10 +76,15 @@
                       <p class="text-xl font-semibold text-gray-900">
                         {{ category.name }}
                       </p>
-                      <p v-for="(text, idx) of category.text" :key="text.id"
+                      <p
                          class="mt-3 text-base text-gray-500">
-                        {{ text.H2 }}
+
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, possimus.
                       </p>
+<!--                      <p v-for="(text, idx) of category.text" :key="text.id"-->
+<!--                         class="mt-3 text-base text-gray-500">-->
+<!--&lt;!&ndash;                        {{ text.H2 }}&ndash;&gt;-->
+<!--                      </p>-->
                       <p class="mt-2 text-base font-medium text-red-800 place-items-end">
                         Подробнее &rarr;
                         <!--                    <NuxtLink-->
