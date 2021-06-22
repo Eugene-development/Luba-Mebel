@@ -72,7 +72,7 @@
                 <div class="flex-1 bg-gray-50 p-6 flex flex-col justify-between">
                   <div class="flex-1">
                     <NuxtLink
-                      :to="'products/' + category.slug">
+                      :to="'/shop/products/' + category.slug">
                       <p class="text-xl font-semibold text-gray-900">
                         {{ category.name }}
                       </p>
