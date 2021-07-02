@@ -1,7 +1,7 @@
 export default {
 
   server: {
-    port: 4400,
+    port: 4120,
     host: '0.0.0.0'
   },
   mode: 'universal',
@@ -9,7 +9,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Люба Мебель || Магазин корпусной и мягкой мебели',
+    title: 'ЛюбаМебель || Магазин корпусной и мягкой мебели',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -47,6 +47,17 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    ['@nuxtjs/google-analytics', {
+      id: ''
+    }],
+    ['@nuxtjs/yandex-metrika', {
+      id: '82186951',
+      webvisor: true,
+      clickmap:true,
+      useCDN:false,
+      trackLinks:true,
+      accurateTrackBounce:true,
+    }],
   ],
   /*
   ** Axios module configuration

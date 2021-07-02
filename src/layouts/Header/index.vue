@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="relative ">
-      <div class=" mx-auto py-3 sm:px-6 lg:px-8 bg-blueGray-200 ">
+      <div class=" mx-auto py-3 sm:px-6 lg:px-8 bg-gradient-to-r from-blueGray-200 via-blueGray-300 to-blueGray-100">
         <div class="pr-16 sm:text-left sm:px-8 flex justify-between">
           <p class="text-sm text-main">
             <NuxtLink to="/" class="mr-2">
@@ -103,6 +103,8 @@
             </p>
             <p class=" text-sm md:text-left text-main animate-pulse ">Товаров (0)</p>
           </div>
+
+
           <div class="max-w-xs object-right justify-end mt-6">
 
             <NuxtLink
@@ -139,7 +141,7 @@
     </div>
 
 
-    <div class="relative bg-blueGray-200 h-16 ">
+    <div class="relative bg-gradient-to-r from-blueGray-200 via-blueGray-300 to-blueGray-100 h-16 ">
       <div class="relative z-10">
         <div class="mb-2 flex  sm:px-6 sm:py-2 lg:px-8 md:justify-start md:space-x-10">
           <div class="md:hidden">
@@ -234,7 +236,6 @@ export default {
 
   methods: {
     ...mapActions({
-
     })
   },
 
