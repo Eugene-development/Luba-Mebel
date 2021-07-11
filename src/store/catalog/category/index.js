@@ -49,16 +49,35 @@ export const actions = {
   },
 
   async getProducts({commit, state}, payload) {
+
+
     const pathAWS = state.pathAWSBucket.path
     commit('PATH_AWS', pathAWS)
-    //TODO Слабое место. Баг при перезагрузке
+
+
+
+
+    //Получил Id категории по слагу в пейлоаде
+    const categories = await this.$axios.$get('get-all-category', state.apiCRUD);
+    forEach(categories, function (value) {
+      const {id} = find(value, {'slug': payload.slug});
+    });
 
     const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
-    const slugCategory = payload.slug;
-    forEach(data, function (value) {
-      const products = find(value.category, {'slug': slugCategory});
-      commit('PRODUCTS', products);
-    });
+    commit('PRODUCTS', data);
+
+
+
+
+
+
+
+    // const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
+    // const slugCategory = payload.slug;
+    // forEach(data, function (value) {
+    //   const products = find(value.category, {'slug': slugCategory});
+    //   commit('PRODUCTS', products);
+    // });
   },
 };
 
