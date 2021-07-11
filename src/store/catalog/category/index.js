@@ -6,6 +6,7 @@ export const state = () => ({
   products: [],
   pathAWS: '',
   seo: [],
+  categoryId: null,
 
   pathAWSBucket: {
     path: process.env.IMAGE_PRODUCTS
@@ -59,17 +60,14 @@ export const actions = {
 
     //Получил Id категории по слагу в пейлоаде
     const categories = await this.$axios.$get('get-all-category', state.apiCRUD);
+
     forEach(categories, function (value) {
       const {id} = find(value, {'slug': payload.slug});
+      commit('CATEGORY_ID', id);
     });
 
-    const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
-    commit('PRODUCTS', data);
-
-
-
-
-
+    const {data} = await this.$axios.$get('get-WhCategory-HmProduct-HmImageProduct-HmTextProduct-CoProduct/' + state.categoryId, state.apiCRUD);
+    commit('PRODUCTS', data[0]);
 
 
     // const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
@@ -87,7 +85,8 @@ export const mutations = {
   PRODUCTS: (state, data) => state.products = data,
   RUBRIC_ID: (state, rubricID) => state.rubricID = rubricID,
   PATH_AWS: (state, pathAWS) => state.pathAWS = pathAWS,
-  SEO: (state, seo) => state.seo = seo
+  SEO: (state, seo) => state.seo = seo,
+  CATEGORY_ID: (state, id) => state.categoryId = id
 };
 
 export const getters = {
