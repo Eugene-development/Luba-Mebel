@@ -2,7 +2,6 @@
   <div>
     <ol >
       <li>One</li>
-      <li>Two</li>
     </ol>
   </div>
 </template>
