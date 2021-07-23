@@ -58,6 +58,7 @@ export const actions = {
 
 
 
+    //TODO а как на счёт искать по слагу на бэке?
     //Получил Id категории по слагу в пейлоаде
     const categories = await this.$axios.$get('get-all-category', state.apiCRUD);
 

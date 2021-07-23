@@ -194,9 +194,9 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "_id",
-  validate({params}) {
-    return /^\d+$/.test(params.id);
-  },
+  // validate({params}) {
+  //   return /^\d+$/.test(params.id);
+  // },
   async asyncData({store, params}) {
     await store.dispatch('catalog/category/getRubric', {
       id: params.id
