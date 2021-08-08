@@ -10,7 +10,7 @@
 
 import Header from './Header'
 import Footer from './Footer'
-// import { mapActions, mapGetters } from "vuex";
+import { mapActions } from "vuex";
 
 
 export default {
@@ -19,13 +19,13 @@ export default {
     Footer
   },
 
-  // methods: {
-  //   ...mapActions({
-  //     'useLocalStorage': 'user/useLocalStorage',
-  //   })
-  // },
-  // mounted() {
-  //   this.useLocalStorage();
-  // },
+  methods: {
+    ...mapActions({
+      'useLocalStorage': 'user/useLocalStorage',
+    })
+  },
+  mounted() {
+    this.useLocalStorage();
+  },
 }
 </script>

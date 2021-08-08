@@ -10,15 +10,15 @@
             <NuxtLink to="/information/about" class="mr-2">
               О компании
             </NuxtLink>
-<!--            <NuxtLink to="/information/" class="mr-2">-->
-<!--              Поставщикам-->
-<!--            </NuxtLink>-->
-<!--            <NuxtLink to="/information/" class="mr-2">-->
-<!--              Новости-->
-<!--            </NuxtLink>-->
-<!--            <NuxtLink to="/information/" class="mr-2">-->
-<!--              Акции-->
-<!--            </NuxtLink>-->
+            <!--            <NuxtLink to="/information/" class="mr-2">-->
+            <!--              Поставщикам-->
+            <!--            </NuxtLink>-->
+            <!--            <NuxtLink to="/information/" class="mr-2">-->
+            <!--              Новости-->
+            <!--            </NuxtLink>-->
+            <!--            <NuxtLink to="/information/" class="mr-2">-->
+            <!--              Акции-->
+            <!--            </NuxtLink>-->
             <NuxtLink to="/information/delivery" class="mr-2">
               Доставка
             </NuxtLink>
@@ -36,10 +36,10 @@
             </NuxtLink>
           </p>
           <p class="text-sm text-main">
-            <a href="https://lubamebel.adminexpo.com/admin/login" class="mr-2" target="_blank">
+            <a href="https://adminexpo.com/admin/login" class="mr-2" target="_blank">
               Вход
             </a>
-            <a href="https://lubamebel.adminexpo.com/admin/registration" class="mr-2" target="_blank">
+            <a href="https://adminexpo.com/admin/registration" class="mr-2" target="_blank">
               Регистрация
             </a>
           </p>
@@ -76,14 +76,15 @@
         <div class="flex">
           <div class="max-w-xs object-right justify-end mt-6">
             <NuxtLink
+              @click.native="cart()"
               to="/shop/cart">
               <div>
-                <svg
-                  class="w-16 h-16 text-main text-right"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-                </svg>
+                <!--                <svg-->
+                <!--                  class="w-16 h-16 text-main text-right"-->
+                <!--                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+                <!--                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
+                <!--                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>-->
+                <!--                </svg>-->
                 <!-- This example requires Ta
                 ilwind CSS v2.0+ -->
                 <!--            <span class="w-full inline-flex items-center justify-center p-1 rounded text-xs font-medium bg-main text-gray-50">-->
@@ -97,18 +98,17 @@
               </div>
             </NuxtLink>
           </div>
-          <div class="max-w-5xl mr-8 mt-8 ml-2">
-            <p class="pb-1 text-main font-extrasolar md:text-2xl sm:text-3xl border-b-1 flex">
-              Избранное
-            </p>
-            <p class=" text-sm md:text-left text-main animate-pulse ">Товаров (0)</p>
-          </div>
+          <!--          <div class="max-w-5xl mr-8 mt-8 ml-2">-->
+          <!--            <p class="pb-1 text-main font-extrasolar md:text-2xl sm:text-3xl border-b-1 flex">-->
+          <!--              Избранное-->
+          <!--            </p>-->
+          <!--            <p class=" text-sm md:text-left text-main animate-pulse ">Товаров (0)</p>-->
+          <!--          </div>-->
 
-
-          <div class="max-w-xs object-right justify-end mt-6">
-
-            <NuxtLink
-              to="/shop/cart">
+          <NuxtLink
+            @click.native="cart()"
+            to="/shop/cart" class="flex">
+            <div class="max-w-xs object-right justify-end mt-6">
               <div>
                 <svg class="w-16 h-16 text-main text-right " fill="none" stroke="currentColor" viewBox="0 0 24 24"
                      xmlns="http://www.w3.org/2000/svg">
@@ -127,14 +127,15 @@
                 <!--              {{lengthCart}}-->
                 <!--            </span>-->
               </div>
-            </NuxtLink>
-          </div>
-          <div class="max-w-5xl mr-8 mt-8 ml-2">
-            <p class="pb-1 text-main font-extrasolar md:text-2xl sm:text-3xl border-b-1 flex">
-              Моя корзина
-            </p>
-            <p class=" text-sm md:text-left text-main animate-pulse ">Ваша корзина пуста</p>
-          </div>
+            </div>
+            <div class="max-w-5xl mr-8 mt-8 ml-2">
+              <p class="pb-1 text-main font-extrasolar md:text-2xl sm:text-3xl border-b-1 flex">
+                Моя корзина
+              </p>
+              <p class=" text-sm md:text-left text-main animate-pulse ">Ваша корзина пуста</p>
+            </div>
+          </NuxtLink>
+
         </div>
 
       </div>
@@ -145,6 +146,7 @@
       <div class="relative z-10">
         <div class="mb-2 flex  sm:px-6 sm:py-2 lg:px-8 md:justify-start md:space-x-10">
           <div class="md:hidden">
+
             <button
               @click="change_visibleMobileMenu"
               class="bg-white rounded-md p-2 inline-flex   text-main hover:text-main hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800"
@@ -161,33 +163,33 @@
             <nav class=" flex space-x-10">
               <div v-for="(head, idx) of allHead" :key="allHead.id" class="space-x-8">
                 <NuxtLink v-for="(rubric, idx) of head.rubric" :key="head.id"
-                          class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"
+                          class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-900"
                           :to="'/shop/catalog/' + rubric.id"
                 >
                   {{ rubric.name }}
                 </NuxtLink>
               </div>
 
-<!--              <div class="relative">-->
-<!--                &lt;!&ndash; Item active: "text-gray-900", Item inactive: "text-main" &ndash;&gt;-->
-<!--                <button-->
-<!--                  class="mt-2 group px-1 rounded-md text-main inline-flex items-center text-base font-medium hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"-->
-<!--                  type="button"-->
-<!--                  @click="change_visibleCatalog">-->
-<!--                  <span>Кухня</span>-->
-<!--                  &lt;!&ndash;-->
-<!--                    Heroicon name: chevron-down-->
+              <!--              <div class="relative">-->
+              <!--                &lt;!&ndash; Item active: "text-gray-900", Item inactive: "text-main" &ndash;&gt;-->
+              <!--                <button-->
+              <!--                  class="mt-2 group px-1 rounded-md text-main inline-flex items-center text-base font-medium hover:text-gray-800 focus:text-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 hover:underline"-->
+              <!--                  type="button"-->
+              <!--                  @click="change_visibleCatalog">-->
+              <!--                  <span>Кухня</span>-->
+              <!--                  &lt;!&ndash;-->
+              <!--                    Heroicon name: chevron-down-->
 
-<!--                    Item active: "text-gray-600", Item inactive: "text-main"-->
-<!--                  &ndash;&gt;-->
-<!--                  <svg aria-hidden="true" class="ml-2 h-5 w-5 text-main group-hover:text-main"-->
-<!--                       fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">-->
-<!--                    <path clip-rule="evenodd"-->
-<!--                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"-->
-<!--                          fill-rule="evenodd"/>-->
-<!--                  </svg>-->
-<!--                </button>-->
-<!--              </div>-->
+              <!--                    Item active: "text-gray-600", Item inactive: "text-main"-->
+              <!--                  &ndash;&gt;-->
+              <!--                  <svg aria-hidden="true" class="ml-2 h-5 w-5 text-main group-hover:text-main"-->
+              <!--                       fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">-->
+              <!--                    <path clip-rule="evenodd"-->
+              <!--                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"-->
+              <!--                          fill-rule="evenodd"/>-->
+              <!--                  </svg>-->
+              <!--                </button>-->
+              <!--              </div>-->
             </nav>
             <div class="mх-8 mt-1 w-1/5 relative rounded-md shadow-sm">
               <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -201,26 +203,10 @@
                      class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                      placeholder="Поиск товара">
             </div>
-
-
-            <!--                                <div class="flex items-center md:ml-12">-->
-            <!--                        <a class="text-base font-medium text-main hover:text-main"-->
-            <!--                           href="http://localhost:3700">-->
-            <!--                          Вход-->
-            <!--                        </a>-->
-            <!--                        <a-->
-            <!--                          class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-main"-->
-            <!--                          href="http://localhost:3700/admin/registration">-->
-            <!--                          Регистрация-->
-            <!--                        </a>-->
-            <!--                      </div>-->
           </div>
         </div>
       </div>
 
-      <!--    <Catalog/>-->
-      <!--    <Information/>-->
-      <!--    <MobileMenu/>-->
 
     </div>
 
@@ -236,6 +222,9 @@ export default {
 
   methods: {
     ...mapActions({
+      'cart': 'catalog/cart/getCart',
+      'change_visibleMobileMenu': 'navbar/visible/change_visibleMobileMenu',
+
     })
   },
 

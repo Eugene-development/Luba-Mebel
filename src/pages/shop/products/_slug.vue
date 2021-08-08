@@ -13,18 +13,18 @@
         <li v-for="(product, idx) of products.product" :key="product.id"
             class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg divide-y divide-gray-200">
           <NuxtLink
-            :to="'/shop/product/' + product.id">
+            :to="'/product/' + product.slug">
             <div class="flex-1 flex flex-col p-8">
               <img
                 v-for="(image, idx) of product.image" :key="image.id"
                 :src="`${pathAWS}${image.filename}`"
                 alt="product"
-                class="w-64 h-64 object-contain flex-shrink-0 mx-auto">
+                class="w-32 h-32 object-contain flex-shrink-0 mx-auto">
               <h3 class="mt-6 text-gray-900 text-sm font-medium">{{ product.name }}</h3>
               <dl class="mt-1 flex-grow flex flex-col justify-between">
                 <dt class="sr-only">Title</dt>
                 <hr class="mt-4">
-                <!--            <dd class="text-gray-500 text-sm">Paradigm Representative</dd>-->
+                <!--                          <dd class="text-gray-500 text-sm">цена</dd>-->
                 <dt class="sr-only">Role</dt>
                 <dd class="mt-3">
                 <span class="px-2 py-1 text-green-800 text-base font-medium bg-green-100 rounded-full">{{
@@ -38,7 +38,7 @@
             <div class="-mt-px flex divide-x divide-gray-200">
               <div class="w-0 flex-1 flex">
                 <button
-                  v-if="true"
+                  v-if="!productsInCart.some(arrVal => product.id === arrVal)"
                   class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500"
                   @click.prevent.once="sendToCart (product.id)">
                   <!-- Heroicon name: solid/phone -->
@@ -51,7 +51,7 @@
                   <span class="ml-3">В корзину</span>
                 </button>
                 <button v-else
-                        class="focus:outline-none relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-50 font-medium border border-transparent rounded-bl-lg hover:text-gray-100 bg-indigo-900">
+                        class="focus:outline-none relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-50 font-medium border border-transparent rounded-bl-lg hover:text-gray-100 bg-main">
                   <!-- Heroicon name: solid/phone -->
                   <svg class="w-5 h-5 text-gray-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                        xmlns="http://www.w3.org/2000/svg">
@@ -62,9 +62,9 @@
                 </button>
 
               </div>
-              <div v-if="true" class="-ml-px w-0 flex-1 flex">
+              <div v-if="productsInCart.some(arrVal => product.id === arrVal)" class="-ml-px w-0 flex-1 flex">
                 <NuxtLink
-                  :to="'/shop/product/' + product.id"
+                  :to="'/product/' + product.id"
                   class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">
                   <!-- Heroicon name: solid/mail -->
                   <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -82,7 +82,6 @@
             </div>
           </div>
         </li>
-        <!--{{seo.title}}-->
       </ul>
 
     </div>
@@ -144,20 +143,15 @@
 import {mapActions, mapGetters} from "vuex";
 
 export default {
-name: "_slug",
   async asyncData({store, params}) {
     await store.dispatch('catalog/category/getProducts', {
       slug: params.slug
     })
-    // await store.dispatch('catalog/category/getSeo', {
-    //   slug: params.slug
-    // })
   },
 
   methods: {
     ...mapActions({
         'sendToCart': 'catalog/cart/sendToCart',
-        // 'getSeo': 'catalog/category/getSeo'
       }
     )
   },
@@ -167,7 +161,6 @@ name: "_slug",
       products: 'catalog/category/products',
       pathAWS: 'catalog/category/pathAWS',
       productsInCart: 'catalog/cart/productsInCart',
-      // seo: 'catalog/category/seo'
     }),
   },
 
