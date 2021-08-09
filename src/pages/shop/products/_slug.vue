@@ -13,7 +13,7 @@
         <li v-for="(product, idx) of products.product" :key="product.id"
             class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow-lg divide-y divide-gray-200">
           <NuxtLink
-            :to="'/product/' + product.slug">
+            :to="'/shop/product/' + product.slug">
             <div class="flex-1 flex flex-col p-8">
               <img
                 v-for="(image, idx) of product.image" :key="image.id"
@@ -64,7 +64,7 @@
               </div>
               <div v-if="productsInCart.some(arrVal => product.id === arrVal)" class="-ml-px w-0 flex-1 flex">
                 <NuxtLink
-                  :to="'/product/' + product.id"
+                  :to="'/shop/product/' + product.id"
                   class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border  border-transparent rounded-bl-lg hover:text-gray-500">
                   <!-- Heroicon name: solid/mail -->
                   <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"

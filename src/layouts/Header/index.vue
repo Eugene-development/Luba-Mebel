@@ -132,7 +132,7 @@
               <p class="pb-1 text-main font-extrasolar md:text-2xl sm:text-3xl border-b-1 flex">
                 Моя корзина
               </p>
-              <p class=" text-sm md:text-left text-main animate-pulse ">Ваша корзина пуста</p>
+              <p class=" text-sm md:text-left text-main animate-pulse">В корзине ({{lengthCart}})</p>
             </div>
           </NuxtLink>
 
@@ -231,6 +231,7 @@ export default {
   computed: {
     ...mapGetters({
       allHead: 'navbar/head/allHead',
+      lengthCart: 'catalog/cart/lengthCart',
     }),
   },
 

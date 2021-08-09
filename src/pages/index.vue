@@ -1,20 +1,4 @@
 <template>
-  <!--
-    This example requires Tailwind CSS v2.0+
-
-    This example requires some changes to your config:
-
-    ```
-    // tailwind.config.js
-    module.exports = {
-      // ...
-      plugins: [
-        // ...
-        require('@tailwindcss/forms'),
-      ]
-    }
-    ```
-  -->
   <div class="bg-white">
 
     <main>
@@ -37,90 +21,24 @@
                   <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                     <h3 class="text-center py-3 text-2xl font-extrabold tracking-tight sm:text-4xl">Акции</h3>
                   </div>
-                  <section class="py-2 text-gray-600 body-font">
-                    <div class="container px-5  mx-auto">
-                      <div class="flex flex-wrap -m-4">
-                        <div class=" p-4 w-full">
-                          <a class="block relative h-48 rounded overflow-hidden">
-                            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                                 src="https://www.mcstyle.ru/assets/images/catalog/leo_print/11-goryi.jpg">
-                          </a>
-                          <div class="mt-4">
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Шкафы-купе</h3>
-                            <h2 class="text-gray-900 title-font text-lg font-medium">Лео</h2>
-                            <p class="mt-1">от 17500 р.</p>
+                  <section v-for="(action, id) in actions" key="action.id" class="py-2 text-gray-600 body-font">
+                    <NuxtLink :to="action.link">
+                      <div class="container px-5  mx-auto">
+                        <div class="flex flex-wrap -m-4">
+                          <div class=" p-4 w-full">
+                            <a class="block relative h-48 rounded overflow-hidden">
+                              <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                                   :src="`${action.img}`">
+                            </a>
+                            <div class="mt-4">
+                              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{ action.category }}</h3>
+                              <h2 class="text-gray-900 title-font text-lg font-medium">{{ action.name }}</h2>
+                              <p class="mt-1">{{ action.price }} р.</p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </section>
-                  <section class="py-2 text-gray-600 body-font">
-                    <div class="container px-5  mx-auto">
-                      <div class="flex flex-wrap -m-4">
-                        <div class=" p-4 w-full">
-                          <a class="block relative h-48 rounded overflow-hidden">
-                            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                                 src="https://www.mcstyle.ru/assets/images/catalog/leo_print/11-goryi.jpg">
-                          </a>
-                          <div class="mt-4">
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Шкафы-купе</h3>
-                            <h2 class="text-gray-900 title-font text-lg font-medium">Лео</h2>
-                            <p class="mt-1">от 17500 р.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  <section class="py-2 text-gray-600 body-font">
-                    <div class="container px-5  mx-auto">
-                      <div class="flex flex-wrap -m-4">
-                        <div class=" p-4 w-full">
-                          <a class="block relative h-48 rounded overflow-hidden">
-                            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                                 src="https://www.mcstyle.ru/assets/images/catalog/leo_print/11-goryi.jpg">
-                          </a>
-                          <div class="mt-4">
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Шкафы-купе</h3>
-                            <h2 class="text-gray-900 title-font text-lg font-medium">Лео</h2>
-                            <p class="mt-1">от 17500 р.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  <section class="py-2 text-gray-600 body-font">
-                    <div class="container px-5  mx-auto">
-                      <div class="flex flex-wrap -m-4">
-                        <div class=" p-4 w-full">
-                          <a class="block relative h-48 rounded overflow-hidden">
-                            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                                 src="https://www.mcstyle.ru/assets/images/catalog/leo_print/11-goryi.jpg">
-                          </a>
-                          <div class="mt-4">
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Шкафы-купе</h3>
-                            <h2 class="text-gray-900 title-font text-lg font-medium">Лео</h2>
-                            <p class="mt-1">от 17500 р.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  <section class="py-2 text-gray-600 body-font">
-                    <div class="container px-5  mx-auto">
-                      <div class="flex flex-wrap -m-4">
-                        <div class=" p-4 w-full">
-                          <a class="block relative h-48 rounded overflow-hidden">
-                            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                                 src="https://www.mcstyle.ru/assets/images/catalog/leo_print/11-goryi.jpg">
-                          </a>
-                          <div class="mt-4">
-                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Шкафы-купе</h3>
-                            <h2 class="text-gray-900 title-font text-lg font-medium">Лео</h2>
-                            <p class="mt-1">от 17500 р.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    </NuxtLink>
                   </section>
 
                 </div>
@@ -199,8 +117,7 @@
                         <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Категории</h2>
                         <p class="text-xl text-gray-500">Вся производимая мебель соответствует стандартам качества ГОСТ.</p>
                       </div>
-                      <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
-                        <li>
+                      <div class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
                           <div class="space-y-4">
                             <div class="aspect-w-3 aspect-h-2">
                               <img class="object-cover shadow-lg rounded-lg"
@@ -215,9 +132,7 @@
                               </div>
                             </div>
                           </div>
-                        </li>
 
-                        <li>
                           <div class="space-y-4">
                             <div class="aspect-w-3 aspect-h-2">
                               <img class="object-cover shadow-lg rounded-lg"
@@ -232,9 +147,7 @@
                               </div>
                             </div>
                           </div>
-                        </li>
 
-                        <li>
                           <div class="space-y-4">
                             <div class="aspect-w-3 aspect-h-2">
                               <img class="object-cover shadow-lg rounded-lg"
@@ -249,9 +162,7 @@
                               </div>
                             </div>
                           </div>
-                        </li>
 
-                        <li>
                           <div class="space-y-4">
                             <div class="aspect-w-3 aspect-h-2">
                               <img class="object-cover shadow-lg rounded-lg"
@@ -266,9 +177,7 @@
                               </div>
                             </div>
                           </div>
-                        </li>
 
-                        <li>
                           <div class="space-y-4">
                             <div class="aspect-w-3 aspect-h-2">
                               <img class="object-cover shadow-lg rounded-lg"
@@ -283,9 +192,7 @@
                               </div>
                             </div>
                           </div>
-                        </li>
 
-                        <li>
                           <div class="space-y-4">
                             <div class="aspect-w-3 aspect-h-2">
                               <img class="object-cover shadow-lg rounded-lg"
@@ -300,9 +207,7 @@
                               </div>
                             </div>
                           </div>
-                        </li>
 
-                        <li>
                           <div class="space-y-4">
                             <div class="aspect-w-3 aspect-h-2">
                               <img class="object-cover shadow-lg rounded-lg"
@@ -317,9 +222,7 @@
                               </div>
                             </div>
                           </div>
-                        </li>
 
-                        <li>
                           <div class="space-y-4">
                             <div class="aspect-w-3 aspect-h-2">
                               <img class="object-cover shadow-lg rounded-lg"
@@ -334,9 +237,7 @@
                               </div>
                             </div>
                           </div>
-                        </li>
 
-                        <li>
                           <div class="space-y-4">
                             <div class="aspect-w-3 aspect-h-2">
                               <img class="object-cover shadow-lg rounded-lg"
@@ -351,10 +252,9 @@
                               </div>
                             </div>
                           </div>
-                        </li>
 
                         <!-- More people... -->
-                      </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -373,22 +273,6 @@
 
     </main>
 
-    <!--
-  This example requires Tailwind CSS v2.0+
-
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/typography'),
-    ]
-  }
-  ```
--->
     <div class="py-16 bg-gray-50 overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 space-y-8 sm:px-6 lg:px-8">
         <div class="text-base max-w-prose mx-auto lg:max-w-none">
@@ -462,6 +346,20 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  data() {
+    return {
+      actions: [
+        {
+          id: 1,
+          category: 'My journey with Vue',
+          name: 'My journey with Vue',
+          price: 'My journey with Vue',
+          img: '',
+          link: ''
+        },
+      ]
+    }
   }
 }
 </script>

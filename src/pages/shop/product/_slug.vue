@@ -89,7 +89,7 @@
 
             <img
               v-for="(image, idx) of item.image" :key="image.id"
-              alt="ecommerce" class=" max-w-xl	 object-contain object-top rounded"
+              alt="ecommerce" class="lg:max-w-md max-w-lg object-contain object-top rounded"
               :src="`${pathAWS}${image.filename}`">
 
           </div>
@@ -105,18 +105,17 @@ import { mapActions, mapGetters } from "vuex";
 
 
 export default {
-name: "_id",
   async asyncData({store, params}) {
     await store.dispatch('catalog/product/getProduct', {
-      id: params.id
+      slug: params.slug
     })
   },
 
   methods: {
     ...mapActions({
-      'changeVisibleDescription': 'catalog/products/changeVisibleDescription',
-      'changeVisiblePayment': 'catalog/products/changeVisiblePayment',
-      'changeVisibleDelivery': 'catalog/products/changeVisibleDelivery',
+      'changeVisibleDescription': 'catalog/product/changeVisibleDescription',
+      'changeVisiblePayment': 'catalog/product/changeVisiblePayment',
+      'changeVisibleDelivery': 'catalog/product/changeVisibleDelivery',
       'sendToCart':'catalog/cart/sendToCart'
     })
   },
@@ -135,7 +134,3 @@ name: "_id",
 
 }
 </script>
-
-<style scoped>
-
-</style>
