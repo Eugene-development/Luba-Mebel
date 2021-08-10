@@ -3,6 +3,53 @@
 
     <main>
 
+      <h1 id="primary-heading" class="sr-only">Описание</h1>
+      <div class="relative bg-main">
+        <div class="h-80 absolute inset-x-0 bottom-0 xl:top-0 xl:h-full">
+          <div class="h-full w-full xl:grid xl:grid-cols-2">
+            <div class="h-full xl:relative xl:col-start-2">
+              <img class="h-full w-full object-cover opacity-85 xl:absolute xl:inset-0"
+                   src="https://www.mcstyle.ru/assets/images/catalog/CHALET/Morskaya/Shale-Morskaya.jpg"
+                   alt="People working on laptops">
+              <div aria-hidden="true"
+                   class="absolute inset-x-0 top-0 h-32  xl:inset-y-0 xl:left-0 xl:h-full xl:w-32 xl:bg-gradient-to-r"></div>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-full  px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-cols-2 xl:grid-flow-col-dense xl:gap-x-8">
+          <div class="text-left relative pt-6 pb-32 sm:pt-12 sm:pb-32 xl:col-start-1 xl:pb-24">
+            <h2 class="text-sm font-semibold tracking-wide uppercase">
+              <span class="bg-gradient-to-r from-purple-300 to-purple-50 bg-clip-text text-transparent">Важная информация</span>
+            </h2>
+            <p class="mt-3 text-3xl font-extrabold text-white">Не подошёл стандартный вариант?</p>
+            <p class="mt-5 text-lg text-gray-300">Изготовим по индивидуальному проекту. Выезд замерщика в
+              черте города бесплатно. Приедем в удобное для вас время.</p>
+            <div class="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
+              <p>
+                <span class="block text-2xl font-bold text-white">826</span>
+                <span class="mt-1 block text-base text-gray-300"><span
+                  class="font-medium text-white">Заказов</span> доставленных клиентам в срок.</span>
+              </p>
+
+              <p>
+                <span class="block text-2xl font-bold text-white">458</span>
+                <span class="mt-1 block text-base text-gray-300"><span class="font-medium text-white">Видов продукции</span> в ассортименте магазина.</span>
+              </p>
+
+              <!--                          <p>-->
+              <!--                            <span class="block text-2xl font-bold text-white">98%</span>-->
+              <!--                            <span class="mt-1 block text-base text-gray-300"><span class="font-medium text-white">Customer satisfaction</span> laoreet amet lacus nibh integer quis.</span>-->
+              <!--                          </p>-->
+
+              <!--                          <p>-->
+              <!--                            <span class="block text-2xl font-bold text-white">12M+</span>-->
+              <!--                            <span class="mt-1 block text-base text-gray-300"><span class="font-medium text-white">Issues resolved</span> lacus nibh integer quis.</span>-->
+              <!--                          </p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <!-- This example requires Tailwind CSS v2.0+ -->
       <div class=" flex bg-gray-50 overflow-hidden">
@@ -15,11 +62,8 @@
               <!-- Secondary column (hidden on smaller screens) -->
               <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">
                 <div class=" relative flex flex-col w-96 border-r border-gray-200 bg-white">
-
-
-
-                  <div class="bg-gradient-to-r from-main via-blueGray-300 to-main space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                    <h3 class="text-center py-3 text-2xl text-main font-extrabold tracking-tight sm:text-4xl">Акции</h3>
+                  <div class=" space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                    <h3 class="text-center py-3 sm:px-3 lg:py-6 text-2xl text-main font-extrabold tracking-tight sm:text-4xl">Наши акции</h3>
                   </div>
                   <section v-for="(action, id) in actions" key="action.id" class="py-2 text-gray-600 body-font">
                     <NuxtLink :to="action.link">
@@ -48,74 +92,11 @@
               <!-- Primary column -->
               <section aria-labelledby="primary-heading"
                        class="min-w-0 flex-1 h-full flex flex-col overflow-hidden lg:order-last">
-                <h1 id="primary-heading" class="sr-only">Account</h1>
-                <div class="relative bg-main ">
-                  <div class="h-80 absolute inset-x-0 bottom-0 xl:top-0 xl:h-full">
-                    <div class="h-full w-full xl:grid xl:grid-cols-2">
-                      <div class="h-full xl:relative xl:col-start-2">
-                        <img class="h-full w-full object-cover opacity-85 xl:absolute xl:inset-0"
-                             src="https://www.mcstyle.ru/assets/images/catalog/CHALET/Morskaya/Shale-Morskaya.jpg"
-                             alt="People working on laptops">
-                        <div aria-hidden="true"
-                             class="absolute inset-x-0 top-0 h-32  xl:inset-y-0 xl:left-0 xl:h-full xl:w-32 xl:bg-gradient-to-r"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-cols-2 xl:grid-flow-col-dense xl:gap-x-8">
-                    <div class="relative pt-6 pb-32 sm:pt-12 sm:pb-32 xl:col-start-1 xl:pb-24">
-                      <h2 class="text-sm font-semibold tracking-wide uppercase">
-                        <span class="bg-gradient-to-r from-purple-300 to-main bg-clip-text text-transparent">Важная информация</span>
-                      </h2>
-                      <p class="mt-3 text-3xl font-extrabold text-white">Не подошёл стандартный вариант?</p>
-                      <p class="mt-5 text-lg text-gray-300">Изготовим по индивидуальному проекту. Выезд замерщика в
-                        черте города бесплатно. Приедем в удобное для вас время.</p>
-                      <div class="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
-                        <p>
-                          <span class="block text-2xl font-bold text-white">8K+</span>
-                          <span class="mt-1 block text-base text-gray-300"><span
-                            class="font-medium text-white">Заказов</span> доставленных клиентам в срок.</span>
-                        </p>
-
-                        <p>
-                          <span class="block text-2xl font-bold text-white">25K+</span>
-                          <span class="mt-1 block text-base text-gray-300"><span class="font-medium text-white">Видов продукции</span> в ассортименте магазина.</span>
-                        </p>
-
-                        <!--                          <p>-->
-                        <!--                            <span class="block text-2xl font-bold text-white">98%</span>-->
-                        <!--                            <span class="mt-1 block text-base text-gray-300"><span class="font-medium text-white">Customer satisfaction</span> laoreet amet lacus nibh integer quis.</span>-->
-                        <!--                          </p>-->
-
-                        <!--                          <p>-->
-                        <!--                            <span class="block text-2xl font-bold text-white">12M+</span>-->
-                        <!--                            <span class="mt-1 block text-base text-gray-300"><span class="font-medium text-white">Issues resolved</span> lacus nibh integer quis.</span>-->
-                        <!--                          </p>-->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!--
-                  This example requires Tailwind CSS v2.0+
-
-                  This example requires some changes to your config:
-
-                  ```
-                  // tailwind.config.js
-                  module.exports = {
-                    // ...
-                    plugins: [
-                      // ...
-                      require('@tailwindcss/aspect-ratio'),
-                    ]
-                  }
-                  ```
-                -->
                 <div class="bg-white">
-                  <div class="mx-auto py-6 px-4 max-w-7xl sm:px-6  lg:py-12">
+                  <div class="mx-auto py-3 px-4 max-w-7xl sm:px-3  lg:py-6">
                     <div class="space-y-6">
-                      <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Категории</h2>
+                      <div class="text-center space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                        <h2 class="text-3xl text-main font-extrabold tracking-tight sm:text-4xl">Категории</h2>
                         <p class="text-xl text-gray-500">Вся производимая мебель соответствует стандартам качества ГОСТ.</p>
                       </div>
                       <div class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
