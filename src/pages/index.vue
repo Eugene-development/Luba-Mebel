@@ -52,7 +52,7 @@
 
 
       <!-- This example requires Tailwind CSS v2.0+ -->
-      <div class=" flex bg-gray-50 overflow-hidden">
+      <div class="flex overflow-hidden">
 
         <div class="flex-1 min-w-0 flex flex-col overflow-hidden">
 
@@ -61,8 +61,8 @@
 
               <!-- Secondary column (hidden on smaller screens) -->
               <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">
-                <div class=" relative flex flex-col w-96 border-r border-gray-200 bg-white">
-                  <div class=" space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                <div class=" relative flex flex-col w-96 border-r border-gray-200">
+                  <div class=" space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-2xl xl:max-w-none">
                     <h3 class="text-center py-3 sm:px-3 lg:py-6 text-2xl text-main font-extrabold tracking-tight sm:text-4xl">Наши акции</h3>
                   </div>
                   <section v-for="(action, id) in actions" key="action.id" class="py-2 text-gray-600 body-font">
@@ -77,7 +77,7 @@
                             <div class="mt-4">
                               <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{ action.category }}</h3>
                               <h2 class="text-gray-900 title-font text-lg font-medium">{{ action.name }}</h2>
-                              <p class="mt-1">{{ action.price }} р.</p>
+                              <p class="mt-1">Цена: {{ action.price }} р.</p>
                             </div>
                           </div>
                         </div>
