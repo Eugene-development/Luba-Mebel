@@ -89,7 +89,7 @@
 
             <img
               v-for="(image, idx) of item.image" :key="image.id"
-              alt="ecommerce" class="lg:max-w-md max-w-lg object-contain object-top rounded"
+              alt="ecommerce" class="lg:max-w-md max-w-lg object-contain object-center rounded"
               :src="`${pathAWS}${image.filename}`">
 
           </div>

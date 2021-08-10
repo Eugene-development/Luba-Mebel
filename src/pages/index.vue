@@ -18,8 +18,8 @@
 
 
 
-                  <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                    <h3 class="text-center py-3 text-2xl font-extrabold tracking-tight sm:text-4xl">Акции</h3>
+                  <div class="bg-gradient-to-r from-main via-blueGray-300 to-main space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                    <h3 class="text-center py-3 text-2xl text-main font-extrabold tracking-tight sm:text-4xl">Акции</h3>
                   </div>
                   <section v-for="(action, id) in actions" key="action.id" class="py-2 text-gray-600 body-font">
                     <NuxtLink :to="action.link">
@@ -27,7 +27,7 @@
                         <div class="flex flex-wrap -m-4">
                           <div class=" p-4 w-full">
                             <a class="block relative h-48 rounded overflow-hidden">
-                              <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                              <img alt="ecommerce" class="object-contain object-center w-full h-full block"
                                    :src="`${action.img}`">
                             </a>
                             <div class="mt-4">
@@ -39,6 +39,7 @@
                         </div>
                       </div>
                     </NuxtLink>
+                    <hr class="my-6">
                   </section>
 
                 </div>
@@ -355,32 +356,32 @@ export default {
           category: 'Диван',
           name: 'Уют',
           price: 7100,
-          img: '',
-          link: ''
+          img: 'https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/luba-mebel/products/yllhHJUrhByfQrpOTY3XUb339cUekTtI3BgvBzef.jpg',
+          link: '/shop/product/divan-uyut'
         },
         {
           id: 1,
           category: 'Гостинная',
           name: 'Софи',
           price: 14450,
-          img: '',
-          link: ''
+          img: 'https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/luba-mebel/products/lWnLRPbd4ImrRmX0moUnjtF7SdSXFeHtIHCxFamm.jpg',
+          link: '/shop/product/gostinaya-sofi'
         },
         {
           id: 1,
           category: 'Шкаф купе',
           name: 'Бася',
           price: 9650,
-          img: '',
-          link: ''
+          img: 'https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/luba-mebel/products/XnUMPehMMzbsws284yq2o1JuHHLspHHOr91tTi3I.jpg',
+          link: '/shop/product/skaf-kupe-basya'
         },
         {
           id: 1,
           category: 'Кухня',
-          name: 'Маша',
-          price: 12450,
-          img: '',
-          link: ''
+          name: 'Татьяна',
+          price: 12850,
+          img: 'https://lumen-image-bucket.s3.eu-central-1.amazonaws.com/luba-mebel/products/SRZt13Z215ISOI6KZESqBu0s7qhaAJNDKSYVM0iX.jpg',
+          link: '/shop/product/kuxnya-tatna'
         },
       ]
     }

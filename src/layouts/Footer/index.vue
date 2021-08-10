@@ -56,27 +56,27 @@
                 </h3>
                 <ul class="mt-4 space-y-4">
                   <li>
-                    <NuxtLink to="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/shop/catalog/divani" class="text-base text-gray-500 hover:text-gray-900">
                       Диваны
                     </NuxtLink>
                   </li>
 
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/shop/catalog/kuhna-i-stolovaia" class="text-base text-gray-500 hover:text-gray-900">
                       Кухня
-                    </a>
+                    </NuxtLink>
                   </li>
 
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/shop/catalog/spalna" class="text-base text-gray-500 hover:text-gray-900">
                       Спальня
-                    </a>
+                    </NuxtLink>
                   </li>
 
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/shop/catalog/gostinaia" class="text-base text-gray-500 hover:text-gray-900">
                       Гостиная
-                    </a>
+                    </NuxtLink>
                   </li>
                 </ul>
               </div>
@@ -86,27 +86,27 @@
                 </h3>
                 <ul class="mt-4 space-y-4">
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/shop/catalog/prihozhaia" class="text-base text-gray-500 hover:text-gray-900">
                       Прихожая
-                    </a>
+                    </NuxtLink>
                   </li>
 
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/shop/catalog/detskaia" class="text-base text-gray-500 hover:text-gray-900">
                       Детская
-                    </a>
+                    </NuxtLink>
                   </li>
 
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/shop/catalog/shkafi" class="text-base text-gray-500 hover:text-gray-900">
                       Шкафы
-                    </a>
+                    </NuxtLink>
                   </li>
 
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/shop/catalog/stoli-i-stulia" class="text-base text-gray-500 hover:text-gray-900">
                       Столы и стулья
-                    </a>
+                    </NuxtLink>
                   </li>
                 </ul>
               </div>
@@ -118,27 +118,27 @@
                 </h3>
                 <ul class="mt-4 space-y-4">
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/information/delivery" class="text-base text-gray-500 hover:text-gray-900">
                       Доставка
-                    </a>
+                    </NuxtLink>
                   </li>
 
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/information/assembly" class="text-base text-gray-500 hover:text-gray-900">
                       Сборка
-                    </a>
+                    </NuxtLink>
                   </li>
 
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/information/payment" class="text-base text-gray-500 hover:text-gray-900">
                       Оплата
-                    </a>
+                    </NuxtLink>
                   </li>
 
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <NuxtLink to="/information/warranty" class="text-base text-gray-500 hover:text-gray-900">
                       Гарантии
-                    </a>
+                    </NuxtLink>
                   </li>
                 </ul>
               </div>
@@ -148,13 +148,13 @@
                 </h3>
                 <ul class="mt-4 space-y-4">
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <a href="https://adminexpo.com/admin/login" class="text-base text-gray-500 hover:text-gray-900">
                       Вход
                     </a>
                   </li>
 
                   <li>
-                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">
+                    <a href="https://adminexpo.com/admin/registration" class="text-base text-gray-500 hover:text-gray-900">
                       Регистрация
                     </a>
                   </li>
