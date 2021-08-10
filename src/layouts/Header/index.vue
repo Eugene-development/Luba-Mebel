@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="relative ">
-      <div class=" mx-auto py-3 sm:px-6 lg:px-8 bg-gradient-to-r from-blueGray-200 via-blueGray-300 to-blueGray-100">
+      <div class=" mx-auto py-3 sm:px-6 lg:px-8 bg-gradient-to-r from-main via-blueGray-300 to-blueGray-100">
         <div class="pr-16 sm:text-left sm:px-8 flex justify-between">
-          <p class="text-sm text-main">
+          <p class="text-sm text-gray-50">
             <NuxtLink to="/" class="mr-2">
               Главная
             </NuxtLink>
@@ -142,14 +142,14 @@
     </div>
 
 
-    <div class="relative bg-gradient-to-r from-blueGray-200 via-blueGray-300 to-blueGray-100 h-16 ">
+    <div class="relative bg-main h-16 ">
       <div class="relative z-10">
-        <div class="mb-2 flex  sm:px-6 sm:py-2 lg:px-8 md:justify-start md:space-x-10">
+        <div class="flex border-b-2 sm:px-6 sm:py-2 lg:px-8 md:justify-start md:space-x-10">
           <div class="md:hidden">
 
             <button
               @click="change_visibleMobileMenu"
-              class="bg-white rounded-md p-2 inline-flex   text-main hover:text-main hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800"
+              class="bg-white rounded-md inline-flex hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-800"
               type="button">
               <span class="sr-only">Открыть меню</span>
               <!-- Heroicon name: menu -->
@@ -163,7 +163,7 @@
             <nav class=" flex space-x-10">
               <div v-for="(head, idx) of allHead" :key="allHead.id" class="space-x-8">
                 <NuxtLink v-for="(rubric, idx) of head.rubric" :key="rubric.id"
-                          class="mt-2 text-base px-1 font-medium rounded-md text-main hover:text-gray-900"
+                          class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-gray-200"
                           :to="'/shop/catalog/' + rubric.slug"
                 >
                   {{ rubric.name }}
