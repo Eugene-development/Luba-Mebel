@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(rubric, idx) of allRubric" :key="allRubric.id">
+    <div v-for="(rubric, idx) of allCategories" :key="allCategories.id">
       <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-blueGray-300 to-gray-50 shadow-lg mb-4">
         <div class="flex flex-col text-center w-full">
           <h1 class=" text-5xl font-medium title-font text-main">{{ rubric.name }}</h1>
@@ -9,51 +9,51 @@
 
 
       <div class="mx-4 flex  ">
-<!--        <div class="flex w-1/5 max-w-sm flex-col flex-grow border-r border-gray-200 pt-8 pb-4 overflow-y-auto hidden md:block">-->
-<!--          <div class="mb-6 flex items-center flex-shrink-0 px-4">-->
-<!--            &lt;!&ndash;          <svg class="text-gray-500 mr-3 h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"&ndash;&gt;-->
-<!--            &lt;!&ndash;               xmlns="http://www.w3.org/2000/svg">&ndash;&gt;-->
-<!--            &lt;!&ndash;            <path&ndash;&gt;-->
-<!--            &lt;!&ndash;              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"&ndash;&gt;-->
-<!--            &lt;!&ndash;              stroke-linecap="round" stroke-linejoin="round"&ndash;&gt;-->
-<!--            &lt;!&ndash;              stroke-width="2"/>&ndash;&gt;-->
-<!--            &lt;!&ndash;          </svg>&ndash;&gt;-->
-<!--            <div class="text-gray-900 text-2xl">-->
-<!--              <strong>{{ rubric.name }}</strong>-->
-<!--            </div>-->
-<!--          </div>-->
+        <!--        <div class="flex w-1/5 max-w-sm flex-col flex-grow border-r border-gray-200 pt-8 pb-4 overflow-y-auto hidden md:block">-->
+        <!--          <div class="mb-6 flex items-center flex-shrink-0 px-4">-->
+        <!--            &lt;!&ndash;          <svg class="text-gray-500 mr-3 h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"&ndash;&gt;-->
+        <!--            &lt;!&ndash;               xmlns="http://www.w3.org/2000/svg">&ndash;&gt;-->
+        <!--            &lt;!&ndash;            <path&ndash;&gt;-->
+        <!--            &lt;!&ndash;              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"&ndash;&gt;-->
+        <!--            &lt;!&ndash;              stroke-linecap="round" stroke-linejoin="round"&ndash;&gt;-->
+        <!--            &lt;!&ndash;              stroke-width="2"/>&ndash;&gt;-->
+        <!--            &lt;!&ndash;          </svg>&ndash;&gt;-->
+        <!--            <div class="text-gray-900 text-2xl">-->
+        <!--              <strong>{{ rubric.name }}</strong>-->
+        <!--            </div>-->
+        <!--          </div>-->
 
-<!--          <hr>-->
-<!--          <div class="mt-5 flex-grow flex flex-col">-->
-<!--            <nav aria-label="Sidebar" class="flex-1 px-2 space-y-1">-->
-<!--              &lt;!&ndash; Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" &ndash;&gt;-->
+        <!--          <hr>-->
+        <!--          <div class="mt-5 flex-grow flex flex-col">-->
+        <!--            <nav aria-label="Sidebar" class="flex-1 px-2 space-y-1">-->
+        <!--              &lt;!&ndash; Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" &ndash;&gt;-->
 
-<!--              <NuxtLink v-for="(category, idx) of rubric.category" :key="category.id"-->
-<!--                        :to="'products/' + category.slug"-->
-<!--                        class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">-->
-<!--                &lt;!&ndash; Heroicon name: outline/folder &ndash;&gt;-->
-<!--                &lt;!&ndash;                <svg aria-hidden="true" class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"&ndash;&gt;-->
-<!--                &lt;!&ndash;                     fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&ndash;&gt;-->
-<!--                &lt;!&ndash;                  <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"&ndash;&gt;-->
-<!--                &lt;!&ndash;                        stroke-linecap="round"&ndash;&gt;-->
-<!--                &lt;!&ndash;                        stroke-linejoin="round"&ndash;&gt;-->
-<!--                &lt;!&ndash;                        stroke-width="2"/>&ndash;&gt;-->
-<!--                &lt;!&ndash;                </svg>&ndash;&gt;-->
+        <!--              <NuxtLink v-for="(category, idx) of rubric.category" :key="category.id"-->
+        <!--                        :to="'products/' + category.slug"-->
+        <!--                        class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">-->
+        <!--                &lt;!&ndash; Heroicon name: outline/folder &ndash;&gt;-->
+        <!--                &lt;!&ndash;                <svg aria-hidden="true" class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                     fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">&ndash;&gt;-->
+        <!--                &lt;!&ndash;                  <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                        stroke-linecap="round"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                        stroke-linejoin="round"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                        stroke-width="2"/>&ndash;&gt;-->
+        <!--                &lt;!&ndash;                </svg>&ndash;&gt;-->
 
-<!--                {{ category.name }}-->
+        <!--                {{ category.name }}-->
 
-<!--                <span-->
-<!--                  class="bg-gray-100 group-hover:bg-gray-200 ml-auto inline-block py-0.5 px-3 text-xs font-medium rounded-full">-->
-<!--                  {{ category.product_count }}-->
-<!--                </span>-->
-<!--              </NuxtLink>-->
-<!--            </nav>-->
-<!--          </div>-->
-<!--        </div>-->
+        <!--                <span-->
+        <!--                  class="bg-gray-100 group-hover:bg-gray-200 ml-auto inline-block py-0.5 px-3 text-xs font-medium rounded-full">-->
+        <!--                  {{ category.product_count }}-->
+        <!--                </span>-->
+        <!--              </NuxtLink>-->
+        <!--            </nav>-->
+        <!--          </div>-->
+        <!--        </div>-->
 
         <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-8 lg:pb-28 lg:px-8">
-          <div v-for="(rubric, idx) of allRubric" :key="allRubric.id" class="relative max-w-7xl mx-auto">
+          <div v-for="(rubric, idx) of allCategories" :key="allCategories.id" class="relative max-w-7xl mx-auto">
             <!--          <div class="text-center">-->
             <!--            <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">-->
             <!--              {{ rubric.name }}-->
@@ -77,14 +77,14 @@
                         {{ category.name }}
                       </p>
                       <p
-                         class="mt-3 text-base text-gray-500">
+                        class="mt-3 text-base text-gray-500">
 
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, possimus.
                       </p>
-<!--                      <p v-for="(text, idx) of category.text" :key="text.id"-->
-<!--                         class="mt-3 text-base text-gray-500">-->
-<!--&lt;!&ndash;                        {{ text.H2 }}&ndash;&gt;-->
-<!--                      </p>-->
+                      <!--                      <p v-for="(text, idx) of category.text" :key="text.id"-->
+                      <!--                         class="mt-3 text-base text-gray-500">-->
+                      <!--&lt;!&ndash;                        {{ text.H2 }}&ndash;&gt;-->
+                      <!--                      </p>-->
                       <p class="mt-2 text-base font-medium text-red-800 place-items-end">
                         Подробнее &rarr;
                         <!--                    <NuxtLink-->
@@ -193,26 +193,21 @@
 import { mapGetters } from "vuex";
 
 export default {
-  name: "_id",
   // validate({params}) {
   //   return /^\d+$/.test(params.id);
   // },
   async asyncData({store, params}) {
-    await store.dispatch('catalog/category/getRubric', {
-      id: params.id
+    await store.dispatch('catalog/category/getCategories', {
+      slug: params.slug
     })
   },
 
 
   computed: {
     ...mapGetters({
-      allRubric: 'catalog/category/allRubric',
+      allCategories: 'catalog/category/allCategories',
     }),
   },
 
 }
 </script>
-
-<style scoped>
-
-</style>

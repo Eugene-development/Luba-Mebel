@@ -2,10 +2,10 @@ import {forEach} from 'lodash';
 import {find} from 'lodash';
 
 export const state = () => ({
+  allCategories: [],
   allRubric: [],
   products: [],
   pathAWS: '',
-  seo: [],
   categoryId: null,
 
   pathAWSBucket: {
@@ -18,22 +18,20 @@ export const state = () => ({
 });
 
 export const actions = {
-  async getSeo({commit, state}, payload) {
-    // console.log(payload.slug);
-
-    // await this.$axios.setToken('1', 'Bearer')
-
-    const {data} = await this.$axios.$get('get-all-category-seo', state.apiCRUD);
-    const currentCategory = find(data, {'slug': payload.slug});
-
-    //Забрать все категории-По слагу выбрать айди нужной категории-снова отправить запрос на сео
-    // const {data} = await this.$axios.$get('get-category-seo/' + 31, state.apiCRUD);
+  async getCategories({commit, state}, payload) {
 
 
-    // console.log(data[0].seo.title);
+    //TODO а как на счёт искать по слагу на бэке?
+    //Получил Id категории по слагу в пейлоаде
+    const rubrics = await this.$axios.$get('get-all-rubric', state.apiCRUD);
 
-    commit('SEO', currentCategory.seo);
+    forEach(rubrics, function (value) {
+      const {id} = find(value, {'slug': payload.slug});
+      commit('RUBRIC_ID', id);
+    });
 
+    const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
+    commit('ALL_CATEGORIES', data);
   },
 
   async getRubric({commit, state}, payload) {
@@ -82,15 +80,16 @@ export const actions = {
 
 
 export const mutations = {
+  ALL_CATEGORIES: (state, data) => state.allCategories = data,
   ALL_RUBRIC: (state, data) => state.allRubric = data,
   PRODUCTS: (state, data) => state.products = data,
   RUBRIC_ID: (state, rubricID) => state.rubricID = rubricID,
   PATH_AWS: (state, pathAWS) => state.pathAWS = pathAWS,
-  SEO: (state, seo) => state.seo = seo,
   CATEGORY_ID: (state, id) => state.categoryId = id
 };
 
 export const getters = {
+  allCategories: state => state.allCategories,
   allRubric: state => state.allRubric,
   products: state => state.products,
   pathAWS: state => state.pathAWS,
