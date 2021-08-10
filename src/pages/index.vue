@@ -352,9 +352,33 @@ export default {
       actions: [
         {
           id: 1,
-          category: 'My journey with Vue',
-          name: 'My journey with Vue',
-          price: 'My journey with Vue',
+          category: 'Диван',
+          name: 'Уют',
+          price: 7100,
+          img: '',
+          link: ''
+        },
+        {
+          id: 1,
+          category: 'Гостинная',
+          name: 'Софи',
+          price: 14450,
+          img: '',
+          link: ''
+        },
+        {
+          id: 1,
+          category: 'Шкаф купе',
+          name: 'Бася',
+          price: 9650,
+          img: '',
+          link: ''
+        },
+        {
+          id: 1,
+          category: 'Кухня',
+          name: 'Маша',
+          price: 12450,
           img: '',
           link: ''
         },

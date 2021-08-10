@@ -66,14 +66,14 @@
               <div class="flex">
                 <span class="title-font font-medium text-4xl text-gray-900">{{ item.price }} руб/{{ item.unit }}.</span>
                 <button
-                  v-if="true"
+                  v-if="!productsInCart.some(arrVal => item.id === arrVal)"
                   @click.prevent.once="sendToCart (item.id)"
-                  class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"
+                  class="flex ml-auto text-main bg-indigo-100 border-0 py-2 px-6 focus:outline-none rounded"
                   wfd-id="157">В корзину
                 </button>
                 <button v-else
-                        class="flex ml-auto text-white bg-red-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-900 rounded"
-                        wfd-id="157">Товар в корзине
+                        class="flex ml-auto text-white bg-main border-0 py-2 px-6 focus:outline-none rounded"
+                        wfd-id="157">В корзине
                 </button>
                 <button
                   class="rounded-full w-10 h-10 bg-gray-100 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4 hover:bg-red-900"
