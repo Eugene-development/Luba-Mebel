@@ -30,6 +30,8 @@ export const actions = {
       commit('RUBRIC_ID', id);
     });
 
+    // console.log(state.rubricID);
+
     const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
     commit('ALL_CATEGORIES', data);
   },

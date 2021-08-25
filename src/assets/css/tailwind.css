@@ -12,10 +12,10 @@
 
 @layer base {
   ul {
-    @apply list-disc list-outside ml-5;
+    @apply list-disc list-outside ml-8;
   }
   ol {
-    @apply list-decimal list-outside ml-5;
+    @apply list-decimal list-outside ml-8;
   }
   h1 {
     @apply text-2xl;

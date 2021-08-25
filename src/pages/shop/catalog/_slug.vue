@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div v-for="(rubric, idx) of allCategories" :key="allCategories.id">
+    <div>
       <div class="p-10 mx-auto sm:px-6 lg:px-8 bg-gradient-to-b from-blueGray-300 to-gray-50 shadow-lg mb-4">
         <div class="flex flex-col text-center w-full">
-          <h1 class=" text-5xl font-medium title-font text-main">{{ rubric.name }}</h1>
+          <h1 class=" text-5xl font-medium title-font text-main">{{ rubric[0].name }}</h1>
         </div>
       </div>
 
@@ -53,7 +53,7 @@
 
         <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-8 lg:pb-28 lg:px-8">
-          <div v-for="(rubric, idx) of allCategories" :key="allCategories.id" class="relative max-w-7xl mx-auto">
+          <div class="relative max-w-7xl mx-auto">
             <!--          <div class="text-center">-->
             <!--            <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">-->
             <!--              {{ rubric.name }}-->
@@ -64,23 +64,23 @@
             <!--          </div>-->
             <!--          <hr class="mt-8">-->
             <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-              <div v-for="(category, idx) of rubric.category" :key="category.id"
+              <div v-for="(category, idx) of rubric[0].category" :key="category.id"
                    class=" flex flex-col rounded-lg shadow-lg overflow-hidden ">
                 <!--            <div class="flex-shrink-0">-->
                 <!--              <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">-->
                 <!--            </div>-->
-                <div class="flex-1 bg-gray-50 p-6 flex flex-col justify-between">
+                <div class="w-64 flex-1 bg-gray-50 p-6 flex flex-col justify-between">
                   <div class="flex-1">
                     <NuxtLink
                       :to="'/shop/products/' + category.slug">
                       <p class="text-xl font-semibold text-gray-900">
                         {{ category.name }}
                       </p>
-                      <p
-                        class="mt-3 text-base text-gray-500">
+<!--                      <p-->
+<!--                        class="mt-3 text-base text-gray-500">-->
 
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, possimus.
-                      </p>
+<!--                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, possimus.-->
+<!--                      </p>-->
                       <!--                      <p v-for="(text, idx) of category.text" :key="text.id"-->
                       <!--                         class="mt-3 text-base text-gray-500">-->
                       <!--&lt;!&ndash;                        {{ text.H2 }}&ndash;&gt;-->
@@ -165,13 +165,12 @@
         </div>
       </div>
 
-      <div class="relative px-4 sm:px-6 lg:px-8">
+      <div v-if="rubric[0].text" class="relative px-4 sm:px-6 lg:px-8">
         <div class="text-lg max-w-prose mx-auto">
           <h1>
-            <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-main sm:text-4xl">Какой то текст</span>
+            <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-main sm:text-4xl" v-html="rubric[0].text.titleText"></span>
           </h1>
-          <p class="mt-8 text-xl text-gray-500 leading-8">Здесть размещать текста для продвижения сайта</p>
-          <p class="mt-8 text-xl text-gray-500 leading-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ex fugiat itaque molestias mollitia neque ratione voluptatem. Adipisci, asperiores consectetur cupiditate dolor eaque facere facilis nemo nostrum quaerat quia quisquam recusandae similique tempora? Alias aliquid aperiam aspernatur, atque commodi consequuntur earum esse eum laudantium magnam, nam neque nostrum possimus provident quas quisquam, quo repellat ullam veniam voluptas. Accusantium adipisci aliquam animi assumenda consectetur debitis dignissimos dolorem doloremque eos eum facilis fugiat harum illum incidunt inventore ipsam iste labore laudantium libero modi molestiae nostrum, odit officia officiis perspiciatis placeat praesentium provident qui quia quibusdam quos rem reprehenderit rerum sapiente sint veniam vitae! Accusamus aperiam dicta dignissimos dolorum ea eligendi error eveniet facere ipsum itaque iure laborum maxime odit, officia officiis pariatur provident quam quo rem repellat reprehenderit repudiandae similique soluta, sunt ullam unde velit vitae! Iure maxime minus placeat repudiandae similique. Ad blanditiis consequuntur doloremque ea error expedita, illo itaque laboriosam nulla quam ratione repellat vel veritatis, vitae voluptate? A, accusamus eius ex excepturi illo molestiae neque numquam obcaecati odio possimus quaerat repellat reprehenderit unde. A accusamus adipisci aliquam aperiam, aspernatur consequatur dolorem ex exercitationem fugiat harum incidunt ipsa maxime minima molestias perferendis suscipit, totam. Cupiditate inventore laborum odio recusandae sint!</p>
+            <p class="mt-8 text-xl text-gray-500 leading-8"  v-html="rubric[0].text.text"></p>
         </div>
         <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
           <!--        <h3>Ждём вас!!!</h3>-->
@@ -205,7 +204,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      allCategories: 'catalog/category/allCategories',
+      rubric: 'catalog/category/allCategories',
     }),
   },
 

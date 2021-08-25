@@ -60,34 +60,34 @@
             <div class="flex-1 flex xl:overflow-hidden">
 
               <!-- Secondary column (hidden on smaller screens) -->
-              <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">
-                <div class=" relative flex flex-col w-96 border-r border-gray-200">
-                  <div class=" space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-2xl xl:max-w-none">
-                    <h3 class="text-center py-3 sm:px-3 lg:py-6 text-2xl text-main font-extrabold tracking-tight sm:text-4xl">Наши акции</h3>
-                  </div>
-                  <section v-for="(action, id) in actions" key="action.id" class="py-2 text-gray-600 body-font">
-                    <NuxtLink :to="action.link">
-                      <div class="container px-5  mx-auto">
-                        <div class="flex flex-wrap -m-4">
-                          <div class=" p-4 w-full">
-                            <a class="block relative h-48 rounded overflow-hidden">
-                              <img alt="ecommerce" class="object-contain object-center w-full h-full block"
-                                   :src="`${action.img}`">
-                            </a>
-                            <div class="mt-4">
-                              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{ action.category }}</h3>
-                              <h2 class="text-gray-900 title-font text-lg font-medium">{{ action.name }}</h2>
-                              <p class="mt-1">Цена: {{ action.price }} р.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </NuxtLink>
-                    <hr class="my-6">
-                  </section>
+<!--              <aside class="hidden lg:block lg:flex-shrink-0 lg:order-first">-->
+<!--                <div class=" relative flex flex-col w-96 border-r border-gray-200">-->
+<!--                  <div class=" space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-2xl xl:max-w-none">-->
+<!--                    <h3 class="text-center py-3 sm:px-3 lg:py-6 text-2xl text-main font-extrabold tracking-tight sm:text-4xl">Наши акции</h3>-->
+<!--                  </div>-->
+<!--                  <section v-for="(action, id) in actions" key="action.id" class="py-2 text-gray-600 body-font">-->
+<!--                    <NuxtLink :to="action.link">-->
+<!--                      <div class="container px-5  mx-auto">-->
+<!--                        <div class="flex flex-wrap -m-4">-->
+<!--                          <div class=" p-4 w-full">-->
+<!--                            <a class="block relative h-48 rounded overflow-hidden">-->
+<!--                              <img alt="ecommerce" class="object-contain object-center w-full h-full block"-->
+<!--                                   :src="`${action.img}`">-->
+<!--                            </a>-->
+<!--                            <div class="mt-4">-->
+<!--                              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{ action.category }}</h3>-->
+<!--                              <h2 class="text-gray-900 title-font text-lg font-medium">{{ action.name }}</h2>-->
+<!--                              <p class="mt-1">Цена: {{ action.price }} р.</p>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </NuxtLink>-->
+<!--                    <hr class="my-6">-->
+<!--                  </section>-->
 
-                </div>
-              </aside>
+<!--                </div>-->
+<!--              </aside>-->
 
               <!-- Primary column -->
               <section aria-labelledby="primary-heading"
@@ -109,8 +109,8 @@
 
                             <div class="space-y-2">
                               <div class="text-lg leading-6 font-medium space-y-1">
-                                <h3>Кухня</h3>
-                                <p class="text-main">от 8500 р.</p>
+                                <h2>Кухонный гарнитур</h2>
+<!--                                <p class="text-main">от 8500 р.</p>-->
                               </div>
                             </div>
                           </div>
