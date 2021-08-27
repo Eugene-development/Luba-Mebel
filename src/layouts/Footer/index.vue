@@ -3,16 +3,16 @@
     <div class="w-screen mt-6 py-20 ">
       <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
         <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-          <img class="h-16" src="https://images.ua.prom.st/558009061_w640_h640_napravlyayucha-rolikova-bila.jpg" alt="Tuple">
+          <img class="h-16" src="/Logo/Безымянный.jpg" alt="Tuple">
         </div>
         <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
           <img class="h-16" src="https://www.shkaflon.ru/materialy/BLUM/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%20%D1%84%D1%83%D1%80%D0%BD%D0%B8%D1%82%D1%83%D1%80%D1%8B%20BLUM.jpg" alt="Mirage">
         </div>
+        <div class="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+          <img class="h-16" src="/Logo/matr.jpg" alt="Transistor">
+        </div>
         <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
           <img class="h-16" src="https://i.pinimg.com/originals/0f/9c/de/0f9cdefd0e1690d59f82884303ad85c8.jpg" alt="StaticKit">
-        </div>
-        <div class="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-          <img class="h-16" src="https://yt3.ggpht.com/ytc/AAUvwnitNpjBirP-i3mMB-lj9NiqOsvezeSbGH_FhZhf=s900-c-k-c0x00ffffff-no-rj" alt="Transistor">
         </div>
         <div class="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
           <img class="h-16" src="https://aglare-mebel.ru/files/brands/%D0%A1%D1%82%D0%B5%D0%BD%D0%B4%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C.png" alt="Workcation">
