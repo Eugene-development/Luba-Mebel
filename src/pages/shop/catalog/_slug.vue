@@ -69,7 +69,7 @@
                 <!--            <div class="flex-shrink-0">-->
                 <!--              <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixqx=IrF17Golbw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">-->
                 <!--            </div>-->
-                <div class="w-64 flex-1 bg-gray-50 p-6 flex flex-col justify-between">
+                <div class="w-64 flex-1 bg-gray-50 p-6 flex flex-col justify-between border-2">
                   <div class="flex-1">
                     <NuxtLink
                       :to="'/shop/products/' + category.slug">

@@ -120,10 +120,9 @@
       <div class="relative px-4 sm:px-6 lg:px-8">
         <div class="text-lg max-w-prose mx-auto">
           <h1>
-            <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-main sm:text-4xl">Какой то текст</span>
+            <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-main sm:text-4xl" v-html="products.text.titleText"></span>
           </h1>
-          <p class="mt-8 text-xl text-gray-500 leading-8">Здесть размещать текста для продвижения сайта</p>
-          <p class="mt-8 text-xl text-gray-500 leading-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ex fugiat itaque molestias mollitia neque ratione voluptatem. Adipisci, asperiores consectetur cupiditate dolor eaque facere facilis nemo nostrum quaerat quia quisquam recusandae similique tempora? Alias aliquid aperiam aspernatur, atque commodi consequuntur earum esse eum laudantium magnam, nam neque nostrum possimus provident quas quisquam, quo repellat ullam veniam voluptas. Accusantium adipisci aliquam animi assumenda consectetur debitis dignissimos dolorem doloremque eos eum facilis fugiat harum illum incidunt inventore ipsam iste labore laudantium libero modi molestiae nostrum, odit officia officiis perspiciatis placeat praesentium provident qui quia quibusdam quos rem reprehenderit rerum sapiente sint veniam vitae! Accusamus aperiam dicta dignissimos dolorum ea eligendi error eveniet facere ipsum itaque iure laborum maxime odit, officia officiis pariatur provident quam quo rem repellat reprehenderit repudiandae similique soluta, sunt ullam unde velit vitae! Iure maxime minus placeat repudiandae similique. Ad blanditiis consequuntur doloremque ea error expedita, illo itaque laboriosam nulla quam ratione repellat vel veritatis, vitae voluptate? A, accusamus eius ex excepturi illo molestiae neque numquam obcaecati odio possimus quaerat repellat reprehenderit unde. A accusamus adipisci aliquam aperiam, aspernatur consequatur dolorem ex exercitationem fugiat harum incidunt ipsa maxime minima molestias perferendis suscipit, totam. Cupiditate inventore laborum odio recusandae sint!</p>
+          <p class="mt-8 text-xl text-gray-500 leading-8" v-html="products.text.text"></p>
         </div>
         <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
           <!--        <h3>Ждём вас!!!</h3>-->
