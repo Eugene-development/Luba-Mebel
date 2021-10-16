@@ -21,21 +21,45 @@ export const actions = {
 
   async getCategories({commit, state}, payload) {
 
-
-    //TODO а как на счёт искать по слагу на бэке?
     //Получил Id категории по слагу в пейлоаде
     const rubrics = await this.$axios.$get('get-all-rubric', state.apiCRUD);
-
     forEach(rubrics, function (value) {
       const {id} = find(value, {'slug': payload.slug});
       commit('RUBRIC_ID', id);
-    });
+    });//TODO А если вшить в сторадж номер рубрики?
 
-    // console.log(state.rubricID);
-
-    const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
+    const {data} = await this.$axios.$get('get-rubric/' + state.rubricID, state.apiCRUD);
+    // const {data} = await this.$axios.$get('get-where-rubric-category-count-text/' + state.rubricID, state.apiCRUD);
     commit('ALL_CATEGORIES', data);
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   async getRubric({commit, state}, payload) {
 
