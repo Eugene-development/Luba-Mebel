@@ -33,27 +33,22 @@ export const actions = {
 
   async getProduct({commit, state}, payload) {
 
-    const products = await this.$axios.$get('get-all-product', state.apiCRUD);
+    const pathAWS = state.pathAWSBucket.path
+    commit('PATH_AWS', pathAWS)
 
+
+    const products = await this.$axios.$get('get-all-product', state.apiCRUD);
     forEach(products, function (value) {
       const {id} = find(value, {'slug': payload.slug});
       commit('PRODUCT_ID', id);
     });
 
-
-
-    const pathAWS = state.pathAWSBucket.path
-    commit('PATH_AWS', pathAWS)
-
     // const id = payload.id;
-
-
-
     // await this.$axios.setToken('1', 'Bearer')
     // this.$axios.setHeader('Authorization', '1');
     // this.$axios.setToken('1');
 
-    const { data } = await this.$axios.$get('get-one-product/' + state.productId, state.apiCRUD);
+    const { data } = await this.$axios.$get('get-product/' + state.productId, state.apiCRUD);
     commit('PRODUCT', data);
 
 
