@@ -161,14 +161,22 @@
           </div>
           <div class="hidden md:flex-1 md:flex md:items-center flex justify-between">
             <nav class=" flex space-x-10">
-              <div v-for="(head, idx) of allHead" :key="allHead.id" class="space-x-8">
-                <NuxtLink v-for="(rubric, idx) of head.rubric" :key="rubric.id"
+              <div class="space-x-8">
+                <NuxtLink v-for="(rubric, idx) of rubrics" :key="rubric.id"
                           class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-gray-200"
                           :to="'/shop/catalog/' + rubric.slug"
                 >
                   {{ rubric.name }}
                 </NuxtLink>
               </div>
+<!--              <div v-for="(head, idx) of allHead" :key="allHead.id" class="space-x-8">-->
+<!--                <NuxtLink v-for="(rubric, idx) of head.rubric" :key="rubric.id"-->
+<!--                          class="mt-2 text-base px-1 font-medium rounded-md text-gray-100 hover:text-gray-200"-->
+<!--                          :to="'/shop/catalog/' + rubric.slug"-->
+<!--                >-->
+<!--                  {{ rubric.name }}-->
+<!--                </NuxtLink>-->
+<!--              </div>-->
 
               <!--              <div class="relative">-->
               <!--                &lt;!&ndash; Item active: "text-gray-900", Item inactive: "text-main" &ndash;&gt;-->
@@ -230,7 +238,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      allHead: 'navbar/head/allHead',
+      rubrics: 'catalog/rubric/rubrics',
       lengthCart: 'catalog/cart/lengthCart',
     }),
   },

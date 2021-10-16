@@ -18,6 +18,7 @@ export const state = () => ({
 });
 
 export const actions = {
+
   async getCategories({commit, state}, payload) {
 
 

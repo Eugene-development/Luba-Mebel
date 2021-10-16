@@ -25,7 +25,7 @@
                     <span class="absolute inset-0 rounded-md overflow-hidden">
                                   <img
                                     v-for="(image, idx) of item.image" :key="image.id"
-                                    alt="ecommerce" class="w-full h-full object-center object-cover"
+                                    alt="ecommerce" class="w-full h-full object-contain object-center "
                                     :src="`${pathAWS}${image.filename}`">
 
               </span>
@@ -43,7 +43,7 @@
                   <img
                     v-for="(image, idx) of item.image" :key="image.id"
                     alt="Angled front view with bag zipped and handles upright."
-                    class="w-full h-full object-center object-cover sm:rounded-lg"
+                    class="w-full h-full object-contain object-center sm:rounded-lg"
                     :src="`${pathAWS}${image.filename}`">
                 </div>
 <!--                TODO без цикла если?-->
@@ -73,42 +73,42 @@
               </div>
 
               <!-- Reviews -->
-              <div class="mt-3">
-                <h3 class="sr-only">Reviews</h3>
-                <div class="flex items-center">
-                  <div class="flex items-center">
-                    <!--
-                      Heroicon name: solid/star
+<!--              <div class="mt-3">-->
+<!--                <h3 class="sr-only">Reviews</h3>-->
+<!--                <div class="flex items-center">-->
+<!--                  <div class="flex items-center">-->
+<!--                    &lt;!&ndash;-->
+<!--                      Heroicon name: solid/star-->
 
-                      Active: "text-indigo-500", Inactive: "text-gray-300"
-                    -->
-                    <svg class="h-5 w-5 flex-shrink-0 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+<!--                      Active: "text-indigo-500", Inactive: "text-gray-300"-->
+<!--                    &ndash;&gt;-->
+<!--                    <svg class="h-5 w-5 flex-shrink-0 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">-->
+<!--                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />-->
+<!--                    </svg>-->
 
-                    <!-- Heroicon name: solid/star -->
-                    <svg class="h-5 w-5 flex-shrink-0 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+<!--                    &lt;!&ndash; Heroicon name: solid/star &ndash;&gt;-->
+<!--                    <svg class="h-5 w-5 flex-shrink-0 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">-->
+<!--                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />-->
+<!--                    </svg>-->
 
-                    <!-- Heroicon name: solid/star -->
-                    <svg class="h-5 w-5 flex-shrink-0 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+<!--                    &lt;!&ndash; Heroicon name: solid/star &ndash;&gt;-->
+<!--                    <svg class="h-5 w-5 flex-shrink-0 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">-->
+<!--                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />-->
+<!--                    </svg>-->
 
-                    <!-- Heroicon name: solid/star -->
-                    <svg class="h-5 w-5 flex-shrink-0 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+<!--                    &lt;!&ndash; Heroicon name: solid/star &ndash;&gt;-->
+<!--                    <svg class="h-5 w-5 flex-shrink-0 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">-->
+<!--                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />-->
+<!--                    </svg>-->
 
-                    <!-- Heroicon name: solid/star -->
-                    <svg class="h-5 w-5 flex-shrink-0 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  </div>
-                  <p class="sr-only">4 out of 5 stars</p>
-                </div>
-              </div>
+<!--                    &lt;!&ndash; Heroicon name: solid/star &ndash;&gt;-->
+<!--                    <svg class="h-5 w-5 flex-shrink-0 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">-->
+<!--                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />-->
+<!--                    </svg>-->
+<!--                  </div>-->
+<!--                  <p class="sr-only">4 out of 5 stars</p>-->
+<!--                </div>-->
+<!--              </div>-->
 
               <div class="mt-6">
                 <h3 class="sr-only">Description</h3>
@@ -143,49 +143,82 @@
               <form class="mt-6">
                 <!-- Colors -->
                 <div>
-                  <h3 class="text-sm text-gray-600">Color</h3>
+                  <h3 class="text-sm text-gray-600">Выбрать размер:</h3>
 
                   <fieldset class="mt-2">
                     <legend class="sr-only">
-                      Choose a color
+                      Выбрать размер
                     </legend>
-                    <div class="flex items-center space-x-3">
-                      <!--
-                        Active and Checked: "ring ring-offset-1"
-                        Not Active and Checked: "ring-2"
-                      -->
-                      <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-700">
-                        <input type="radio" name="color-choice" value="Washed Black" class="sr-only" aria-labelledby="color-choice-0-label">
-                        <p id="color-choice-0-label" class="sr-only">
-                          Washed Black
-                        </p>
-                        <span aria-hidden="true" class="h-8 w-8 bg-gray-700 border border-black border-opacity-10 rounded-full"></span>
-                      </label>
 
-                      <!--
-                        Active and Checked: "ring ring-offset-1"
-                        Not Active and Checked: "ring-2"
-                      -->
-                      <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
-                        <input type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-1-label">
-                        <p id="color-choice-1-label" class="sr-only">
-                          White
-                        </p>
-                        <span aria-hidden="true" class="h-8 w-8 bg-white border border-black border-opacity-10 rounded-full"></span>
-                      </label>
+                    <div>
+                      <div class="mt-1 relative">
+                        <button type="button" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                        <span class="block truncate">
+                          Tom Cook
+                        </span>
+                                            <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                          <!-- Heroicon name: solid/selector -->
+                          <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                          </svg>
+                        </span>
+                        </button>
 
-                      <!--
-                        Active and Checked: "ring ring-offset-1"
-                        Not Active and Checked: "ring-2"
-                      -->
-                      <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-500">
-                        <input type="radio" name="color-choice" value="Washed Gray" class="sr-only" aria-labelledby="color-choice-2-label">
-                        <p id="color-choice-2-label" class="sr-only">
-                          Washed Gray
-                        </p>
-                        <span aria-hidden="true" class="h-8 w-8 bg-gray-500 border border-black border-opacity-10 rounded-full"></span>
-                      </label>
+                        <!--
+                          Select popover, show/hide based on select state.
+
+                          Entering: ""
+                            From: ""
+                            To: ""
+                          Leaving: "transition ease-in duration-100"
+                            From: "opacity-100"
+                            To: "opacity-0"
+                        -->
+                        <ul class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+                          <!--
+                            Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
+
+                            Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
+                          -->
+                          <li class="text-gray-900 cursor-default select-none relative py-2 pl-8 pr-4" id="listbox-option-0" role="option">
+                            <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                            <span class="font-normal block truncate">
+                              Wade Cooper
+                            </span>
+
+                            <!--
+                              Checkmark, only display for selected option.
+
+                              Highlighted: "text-white", Not Highlighted: "text-indigo-600"
+                            -->
+                            <span class="text-indigo-600 absolute inset-y-0 left-0 flex items-center pl-1.5">
+                              <!-- Heroicon name: solid/check -->
+                              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                              </svg>
+                            </span>
+                          </li>
+
+                          <!-- More items... -->
+                        </ul>
+                      </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   </fieldset>
                 </div>
 
@@ -194,13 +227,13 @@
                     v-if="!productsInCart.some(arrVal => item.id === arrVal)"
                     @click.prevent.once="sendToCart (item.id)"
                     type="submit"
-                    class="max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full">
+                    class="max-w-xs flex-1 bg-main border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-main sm:w-full">
                     В корзину
                   </button>
                   <button
                     v-else
                     type="submit"
-                    class="max-w-xs flex-1 bg-red-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full">
+                    class="max-w-xs flex-1 bg-red-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full">
                     В корзине
                   </button>
 

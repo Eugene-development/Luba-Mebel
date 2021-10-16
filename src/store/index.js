@@ -6,7 +6,7 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({dispatch}){
-    await dispatch('navbar/head/getHead');
+    await dispatch('catalog/rubric/getRubrics');
     await dispatch('user/createUUID');
   }
 };
