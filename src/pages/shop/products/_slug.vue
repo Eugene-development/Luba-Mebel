@@ -143,7 +143,7 @@ import {mapActions, mapGetters} from "vuex";
 
 export default {
   async asyncData({store, params}) {
-    await store.dispatch('catalog/category/getProducts', {
+    await store.dispatch('catalog/products/getProducts', {
       slug: params.slug
     })
   },
@@ -157,8 +157,8 @@ export default {
 
   computed: {
     ...mapGetters({
-      products: 'catalog/category/products',
-      pathAWS: 'catalog/category/pathAWS',
+      products: 'catalog/products/products',
+      pathAWS: 'catalog/products/pathAWS',
       productsInCart: 'catalog/cart/productsInCart',
     }),
   },
