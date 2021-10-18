@@ -5,6 +5,7 @@ export const state = () => ({
   category: [],
   pathAWS: '',
   productId: null,
+  currentProduct:[],
 
   visibleDescription: true,
   visiblePayment: false,
@@ -21,15 +22,6 @@ export const state = () => ({
 });
 
 export const actions = {
-  // async getProduct({commit, state}, payload) {
-  //   const slugCategory = payload[0];
-  //   const allRubric = payload[1];
-  //   await forEach(allRubric, function (value) {
-  //     const data = find(value.category, {'slug': slugCategory});
-  //     commit('PRODUCTS', data);
-  //   });
-  // },
-
 
   async getProduct({commit, state}, payload) {
 
@@ -51,9 +43,16 @@ export const actions = {
     const { data } = await this.$axios.$get('get-product/' + state.productId, state.apiCRUD);
     commit('PRODUCT', data);
 
-
     const category = map(data, 'category');
     commit('CATEGORY', category);
+  },
+
+  setCurrentSize({commit, state}, payload){
+    const currentProduct = {
+      size: payload.size,
+      price: payload.price.price
+    }
+    commit('CURRENT_SIZE', currentProduct)
   },
 
   changeVisibleDescription({ commit }) {
@@ -92,6 +91,7 @@ export const mutations = {
   VISIBLE_PAYMENT: (state, visiblePayment) => state.visiblePayment = visiblePayment,
   VISIBLE_DELiVERY: (state, visibleDelivery) => state.visibleDelivery = visibleDelivery,
   PRODUCT_ID: (state, id) => state.productId = id,
+  CURRENT_SIZE: (state, currentProduct) => state.currentProduct = currentProduct
 };
 
 export const getters = {
@@ -101,4 +101,5 @@ export const getters = {
   visibleDescription: state => state.visibleDescription,
   visiblePayment: state => state.visiblePayment,
   visibleDelivery: state => state.visibleDelivery,
+  currentProduct: state => state.currentProduct
 };
