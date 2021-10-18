@@ -11,6 +11,7 @@ export const state = () => ({
   visiblePayment: false,
   visibleDelivery: false,
   startSize: true,
+  changeSize: false,
 
   pathAWSBucket: {
     path: process.env.IMAGE_PRODUCTS
@@ -49,13 +50,17 @@ export const actions = {
   },
 
   setCurrentSize({commit, state}, payload){
-    const currentProduct = {
+    const currentSize = {
       size: payload.size,
       price: payload.price.price
     };
+    commit('CURRENT_SIZE', currentSize);
+
     const startSize = false;
-    commit('CURRENT_SIZE', currentProduct);
     commit('START_SIZE', startSize);
+
+    const changeSize = false;
+    commit('CHANGE_SIZE', changeSize)
   },
 
   changeVisibleDescription({ commit }) {
@@ -84,6 +89,11 @@ export const actions = {
     commit('VISIBLE_PAYMENT', visiblePayment);
     commit('VISIBLE_DELiVERY', visibleDelivery);
   },
+
+  changeVisibleSize ({ commit, state }){
+    const changeSize = !state.changeSize;
+    commit('CHANGE_SIZE', changeSize);
+  }
 };
 
 export const mutations = {
@@ -95,7 +105,8 @@ export const mutations = {
   VISIBLE_DELiVERY: (state, visibleDelivery) => state.visibleDelivery = visibleDelivery,
   PRODUCT_ID: (state, id) => state.productId = id,
   CURRENT_SIZE: (state, currentProduct) => state.currentProduct = currentProduct,
-  START_SIZE: (state, startSize) => state.startSize = startSize
+  START_SIZE: (state, startSize) => state.startSize = startSize,
+  CHANGE_SIZE: (state, changeSize) => state.changeSize = changeSize,
 };
 
 export const getters = {
@@ -106,5 +117,6 @@ export const getters = {
   visiblePayment: state => state.visiblePayment,
   visibleDelivery: state => state.visibleDelivery,
   currentProduct: state => state.currentProduct,
-  startSize: state => state.startSize
+  startSize: state => state.startSize,
+  changeSize: state => state.changeSize
 };

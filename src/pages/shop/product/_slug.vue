@@ -149,7 +149,7 @@
 
                     <div>
                       <div class="mt-1 relative">
-                        <button type="button" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-red-800 focus:border-red-800 sm:text-sm" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                        <button @click="changeVisibleSize" type="button" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-red-800 focus:border-red-800 sm:text-sm" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
                         <span v-if="startSize" class="block truncate">
                           {{ product[0].size[0].size }}
                         </span>
@@ -174,20 +174,18 @@
                             From: "opacity-100"
                             To: "opacity-0"
                         -->
-                        <ul class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+                        <ul v-if="changeSize" class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
                           <!--
                             Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
 
                             Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
                           -->
+
+
                           <li v-for="(size, idx) of product[0].size" :key="size.id"
-                              class="text-gray-900 cursor-default select-none relative py-2 pl-8 pr-4 hover:text-white hover:bg-red-800" id="listbox-option-0" role="option">
+                              class="text-gray-900 cursor-pointer select-none relative py-2 pl-8 pr-4 hover:text-white hover:bg-red-800" id="listbox-option-0" role="option">
                             <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
-                            <button
-                              @click="setCurrentSize (size)"
-                              type="button">
-                              <span class="font-normal block truncate">{{ size.size }}</span>
-                            </button>
+                              <span @click="setCurrentSize (size)" class="w-full font-normal block truncate">{{ size.size }}</span>
 
                           </li>
 
@@ -406,7 +404,8 @@ export default {
       'changeVisiblePayment': 'catalog/product/changeVisiblePayment',
       'changeVisibleDelivery': 'catalog/product/changeVisibleDelivery',
       'sendToCart':'catalog/cart/sendToCart',
-      'setCurrentSize': 'catalog/product/setCurrentSize'
+      'setCurrentSize': 'catalog/product/setCurrentSize',
+      'changeVisibleSize': 'catalog/product/changeVisibleSize'
     })
   },
 
@@ -420,7 +419,8 @@ export default {
       visibleDelivery: 'catalog/product/visibleDelivery',
       productsInCart: 'catalog/cart/productsInCart',
       currentProduct: 'catalog/product/currentProduct',
-      startSize: 'catalog/product/startSize'
+      startSize: 'catalog/product/startSize',
+      changeSize: 'catalog/product/changeSize'
     }),
   },
 
