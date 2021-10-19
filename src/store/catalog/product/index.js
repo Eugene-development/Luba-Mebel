@@ -93,7 +93,14 @@ export const actions = {
   changeVisibleSize ({ commit, state }){
     const changeSize = !state.changeSize;
     commit('CHANGE_SIZE', changeSize);
+  },
+
+  cleanSize ({ commit }){
+    const startSize = true;
+    commit('START_SIZE', startSize);
   }
+
+
 };
 
 export const mutations = {

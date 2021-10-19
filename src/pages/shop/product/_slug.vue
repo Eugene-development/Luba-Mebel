@@ -176,7 +176,7 @@
                             From: "opacity-100"
                             To: "opacity-0"
                         -->
-                        <ul v-if="changeSize" class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+                        <ul v-if="changeSize" class="absolute z-10 mt-1 w-full bg-gray-50 shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
                           <!--
                             Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
 
@@ -219,13 +219,13 @@
                     v-if="!productsInCart.some(arrVal => product[0].id === arrVal)"
                     @click.prevent.once="sendToCart (product[0].id)"
                     type="submit"
-                    class="max-w-xs flex-1 bg-main border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-main sm:w-full">
+                    class="max-w-xs flex-1 bg-main border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-main sm:w-full">
                     В корзину
                   </button>
                   <button
                     v-else
                     type="submit"
-                    class="max-w-xs flex-1 bg-red-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full">
+                    class="max-w-xs flex-1 bg-red-800 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full">
                     В корзине
                   </button>
 
@@ -400,6 +400,10 @@ export default {
     })
   },
 
+  mounted() {
+    this.cleanSize();
+  },
+
   methods: {
     ...mapActions({
       'changeVisibleDescription': 'catalog/product/changeVisibleDescription',
@@ -407,7 +411,8 @@ export default {
       'changeVisibleDelivery': 'catalog/product/changeVisibleDelivery',
       'sendToCart':'catalog/cart/sendToCart',
       'setCurrentSize': 'catalog/product/setCurrentSize',
-      'changeVisibleSize': 'catalog/product/changeVisibleSize'
+      'changeVisibleSize': 'catalog/product/changeVisibleSize',
+      'cleanSize': 'catalog/product/cleanSize'
     })
   },
 
