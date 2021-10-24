@@ -121,10 +121,10 @@ export const actions = {
     const cart = cloneDeep(state.cart); //Клонируем объект из стэйта, что бы не было ошибки изменения стэйта вне мутации
     const total = cart.reduce((sum, product) => {
       let total = 0;
-      total = product.price
+      total = product.size[0].price.price
       return sum + total * product.quantity;
     }, 0);
-    const totalSum = (total - total * 0.1).toFixed(2);
+    const totalSum = (total - total * 0.1).toFixed(0);
     commit('TOTAL_SUM', totalSum);
 
     /**
@@ -162,10 +162,10 @@ export const actions = {
 
     const total = cart.reduce((sum, product) => {
       let total = 0;
-      total = product.price
+      total = product.size[0].price.price
       return sum + total * product.quantity;
     }, 0);
-    const totalSum = (total - total * 0.1).toFixed(2);
+    const totalSum = (total - total * 0.1).toFixed(0);
     commit('TOTAL_SUM', totalSum);
   },
 
@@ -190,10 +190,10 @@ export const actions = {
 
     const total = cart.reduce((sum, product) => {
       let total = 0;
-      total = product.price
+      total = product.size[0].price.price
       return sum + total * product.quantity;
     }, 0);
-    const totalSum = (total - total * 0.1).toFixed(2);
+    const totalSum = (total - total * 0.1).toFixed(0);
     commit('TOTAL_SUM', totalSum); //TODO избыточность в трёх местах код
   },
 
