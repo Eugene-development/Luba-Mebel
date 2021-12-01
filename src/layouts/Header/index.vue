@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <div class="relative ">
       <div class=" mx-auto py-3 sm:px-6 lg:px-8 bg-gradient-to-r from-main via-blueGray-300 to-blueGray-100">
         <div class="pr-16 sm:text-left sm:px-8 flex justify-between">

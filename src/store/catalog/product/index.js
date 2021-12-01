@@ -1,4 +1,4 @@
-import {find, forEach, map} from 'lodash';
+import {find, forEach, map, set} from 'lodash';
 
 export const state = () => ({
   product: [],
@@ -42,7 +42,8 @@ export const actions = {
     // this.$axios.setHeader('Authorization', '1');
     // this.$axios.setToken('1');
 
-    const { data } = await this.$axios.$get('get-product/' + state.productId, state.apiCRUD);
+    const { data : dataProduct } = await this.$axios.$get('get-product/' + state.productId, state.apiCRUD);
+    const data = set(dataProduct, 'data[0].size', dataProduct[0].size.reverse()) //Изменил порядок следования вложенного объекта
     commit('PRODUCT', data);
 
     const category = map(data, 'category');
@@ -104,7 +105,7 @@ export const actions = {
 };
 
 export const mutations = {
-  PRODUCT: (state, data) => state.product = data,
+  PRODUCT: (state, data) => state.product = data.reverse(),
   CATEGORY: (state, data) => state.category = data,
   PATH_AWS: (state, pathAWS) => state.pathAWS = pathAWS,
   VISIBLE_DESCRIPTION: (state, visibleDescription) => state.visibleDescription = visibleDescription,

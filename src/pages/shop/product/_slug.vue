@@ -151,7 +151,7 @@
                       <div class="mt-1 relative">
                         <button @click="changeVisibleSize" type="button" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-red-800 focus:border-red-800 sm:text-sm" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
                         <span v-if="startSize" class="block truncate">
-                          {{ product[0].size[0].size === null ? 'Не указано' : product[0].size[0].size }}
+                          {{ product[0].size[0].size === null ? 'Не указан' : product[0].size[0].size }}
 <!--                          <span v-if="product[0].size[0].size === null">Не указано</span>-->
 <!--                          <span v-else>{{ product[0].size[0].size }}</span>-->
                         </span>
@@ -182,35 +182,15 @@
 
                             Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
                           -->
-
-
                           <li v-for="(size, idx) of product[0].size" :key="size.id"
                               class="text-gray-900 cursor-pointer select-none relative py-2 pl-8 pr-4 hover:text-white hover:bg-red-800" id="listbox-option-0" role="option">
                             <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
                               <span @click="setCurrentSize (size)" class="w-full font-normal block truncate">{{ size.size }}</span>
 
                           </li>
-
-                          <!-- More items... -->
                         </ul>
                       </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                   </fieldset>
                 </div>
 
